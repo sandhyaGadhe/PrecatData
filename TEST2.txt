@@ -109,3 +109,5 @@ iii. Accurate result of a program
 iii. None of these
 49. Which of the following is right flow of SDLC stages?
 50. A logical flow of a given problem statement written in simple English/human  language is :
+
+testing
