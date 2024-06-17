@@ -1,0 +1,46 @@
+*************
+#include <stdio.h>
+struct test
+{
+int capacity;
+char *course;
+}st[]={ 220, "DAC Pune",
+ 120, "KDAC Karad ",
+ 60, "DBDA",
+ 120, "DESD",
+ 120, "DMC",
+ 60, "DITISS"};
+int main (void)
+{
+typedef struct test TEST; 
+TEST *p = st; // p is pointer to a structure 
+p += 1; 
+// p = p + 1 =>pointer arithmatic 
+// pointer will increment by its scale factor 
+//scale factor of pointer p is 8 bytes ( becoz size of structure is 8 bytes)
+// pointer is incrmented by 8 bytes 
+// so pointer goes to next address i.e "KDAC Karad" 
+
+++p -> course;
+// here -> operator has higher precedence than ++ 
+//p-> course => will fetch the base address of KDAC Karad 
+//And applying increment opr will take pointer from K to D from KDAC Karad 
+
+
+// pointer is storing the address D from KDAC Karad as it is incrmented previously
+printf(" %s", p++-> course); // prints DAC Karad
+// post incrment p  
+// pointer will move to next location i.e "DBDA"
+
+printf(" %c", *++p -> course); // B 
+// p->course will fetch DBDA 
+//++p will increment address it will take pointer from D to B from DBDA 
+// it will print B  
+
+printf(" %d", p[0].capacity); //60 (prints DBDA capacity i.e 60) 
+printf(" %s", p->course);//BDA
+// p->course will print BDA because p->course was incremented previously 
+// so pointer was pointing to B so it will print BDA 
+return 0;
+}
+******************************

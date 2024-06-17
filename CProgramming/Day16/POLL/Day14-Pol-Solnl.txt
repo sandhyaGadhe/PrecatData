@@ -1,0 +1,280 @@
+// #include <stdio.h>
+// void funcion_print(int p[][2])
+// {
+//     int r, c;
+//     for (r = 0; r < 2; r++)
+//     {
+//         for (c = 0; c < 2; c++)
+//         {
+//             printf("%d %d %d %d ", r, c, *(*(p + r) + c), *(*(p + c) + r));
+//             printf("%d %d %d %d \n", c, r, p[c][r], p[r][c]);
+//         }
+//     }
+//     return;
+// }
+// int main(void)
+// {
+//     int a[2][2] = {{1, 2}, {1, 2}};
+//     funcion_print(a);
+//     return 0;
+// }
+// /*
+// for (r = 0; r < 2; r++)
+// {
+//     for (c = 0; c < 2; c++)
+//     {
+//         printf("%d %d %d %d ", r, c, *(*(p + r) + c), *(*(p + c) + r));
+//         printf("%d %d %d %d \n", c, r, p[c][r], p[r][c]);
+//     }
+// }
+// // r = 0 , c = 0
+//   r and c is printed as 0 , 0
+
+//     *(*(p + r) + c)
+//     *(*(400 + 0)+0)
+//     *(400 + 0)
+//     *(400) => 1
+
+//     *(*(p + c) + r)
+//     *(*(p + 0) + 0)
+//     *(*(400 + 0) + 0)
+//     *(400 + 0)
+//     *(400) => 1
+
+//     // r = 0 c = 0
+//     c and r are printed 0 and 0
+
+//     p[c][r] => prints 1
+//     p + c => 400 + 0 = 400 ( outer address)
+//     *(p + c) => *(400 + 0) = *(400) ( inner address )
+//     *(p + c) + r => (*(400 + 0) + 0 ) => *400
+//     *(*(p + c) + r ) => *(*400) => 1
+
+//     p[r][c]
+//     *(*(p + r) + c)
+//     *(*(p + 0) + 0)
+//     1
+
+//     after first iteration values are 0 , 0 , 1 , 1 , 0 , 0 , 1 1
+
+//     ******************************************************
+//     In next iteration r remains same  and c++
+//     r = 0 , c = 1 are printed
+
+//     r and c are printed on terminal
+
+//     *(*(p+r)+c)
+//     *(*(p+0)+1)
+//     p + 0 => 400 ( outer address)
+//     *(p + 0 )=> 400 ( inner address )
+//     *(p + 0 ) + 1 => 400 + 1 => 400 + 1 * 4 => 404
+//     *(*(p + 0 ) + 1) => *404 => 2 is printed
+
+//     *(*(p+c)+r)
+//     *(*(p+1)+0) => 1 is printed
+
+//     2 , 1 is printed
+
+//     in next printf c and r is printed as c=1 , r=0
+//     1 , 0 is printed
+
+//     p[c][r]
+//     *(*(p + c ) + r )
+//     *(*(p + 1 ) + 0 )
+//     p + 1 => 416 ( outer address )
+//     *(p + 1) => 416 ( inner address )
+//     *(p + 1) + 0 => 416 + 0 * 4 => 416
+//     *(*(p + 1) + 0) => *416 => 1 is printed
+
+//     p[r][c]
+//     *(*(p + r) + c)
+//     *(*(p + 0) + 1)
+//     prints 2
+
+//   in second iteration 0 , 1 , 2, 1 , 1 , 0 , 1 ,2
+
+// */
+
+//***********************************************************************************
+
+#include <stdio.h>
+int cnt;
+void fun(int **const pp);
+int main(void)
+{
+    int arr[][4] = {{1, 2, 3, 4}, {4, 3, 2, 8}, {7, 8, 9, 0}}, r, c;
+    /*
+        arr 
+
+               [0]   [1]   [2]   [3]   
+        [0]     1     2     3     4 
+        
+        [1]     4     3     2     8 
+
+        [2]     7     8     9     0   
+    
+    
+    */
+    int *ptr = NULL;
+    for (r = 0; r < 3; r++)
+    {
+        for (c = 0; c < 4; c++)
+        {
+            ptr = &arr[r][c];
+            fun(&ptr);
+            printf("%d ", arr[r][c]);
+        }
+    }
+    printf("\n");
+    return 0;
+}
+void fun(int **const pp)
+{
+    if (cnt++ % 2 == 0)
+        **pp = **pp + sizeof('A') / 2;
+    else
+        **pp = **pp + sizeof(3.142) / 2;
+    return;
+}
+/*
+    cnt is a global variable its default value is 0 
+
+    
+******************************************************************
+ first call 
+
+    for (r = 0; r < 3; r++)
+    {
+        for (c = 0; c < 4; c++)
+        {
+            // r = 0 c = 0 
+            ptr = &arr[r][c]; 
+            fun(&ptr); // &arr[0][0] is passed ( call is given ) 
+            printf("%d ", arr[r][c]); // 3 is printed here ( value updated inside function )
+        }
+    }
+
+    r = 0 c = 0 
+
+    //              &arr[0][0]     cnt = 0 
+    void fun(int **const pp)
+    {
+        if (cnt++ % 2 == 0) if( 0 % 2 == 0) => if(1)=>true
+            **pp = **pp + sizeof('A') / 2; 
+                 =   1  +    4 / 2 
+                 =   1  +  2 
+                 =     3    
+        else
+            **pp = **pp + sizeof(3.142) / 2; // skipped 
+                 
+        // arr[0][0] is updated to 3          
+        return;
+    }
+
+    ***************************************************
+    second call 
+
+    r = 0  c = 1 
+
+    for (r = 0; r < 3; r++)
+    {
+        for (c = 0; c < 4; c++)
+        {
+            // r = 0 c = 1 
+            ptr = &arr[r][c]; 
+            fun(&ptr); // &arr[0][1] is passed ( call is given ) 
+            printf("%d ", arr[r][c]); // 6 is printed here ( value updated inside function )
+        }
+    }
+
+    r = 0 c = 1 
+    // arr[0][1] => 2 
+    //              &arr[0][1]     cnt = 1 (cnt is updated in previous iteration ) 
+    void fun(int **const pp)
+    {
+        if (cnt++ % 2 == 0) if( 1 % 2 == 0) => if(0)=>False 
+            **pp = **pp + sizeof('A') / 2;  // skipped 
+        else
+            **pp = **pp + sizeof(3.142) / 2;  
+                 =   2  +  8 / 2 
+                 =   2  +  4 
+                 =     6   
+                 
+        // arr[0][1] is updated to 6          
+        return;
+    }
+
+    ************************************************************
+    count = 2 ( incremented in previous iteration )
+    Third call 
+
+    r = 0  c = 2 
+
+    for (r = 0; r < 3; r++)
+    {
+        for (c = 0; c < 4; c++)
+        {
+            // r = 0 c = 2 
+            ptr = &arr[r][c]; 
+            fun(&ptr); // &arr[0][2] is passed ( call is given ) 
+            printf("%d ", arr[r][c]); // 5 is printed here ( value updated inside function )
+        }
+    }
+
+    r = 0 c = 2
+    // arr[0][2] => 3 
+    //              &arr[0][2]     cnt = 2 (cnt is updated in previous iteration ) 
+    void fun(int **const pp)
+    {
+        if (cnt++ % 2 == 0) if( 2 % 2 == 0) => if(T)=>True
+            **pp = **pp + sizeof('A') / 2;  
+                 =   3  +   4 / 2 
+                 =   3  + 2 
+                 =    5 
+        else
+            **pp = **pp + sizeof(3.142) / 2;  
+                
+                 
+        // arr[0][2] is updated to 5          
+        return;
+    }
+
+    ***********************************************************
+
+    count = 3 ( incremented in previous iteration )
+    fourth call 
+
+    r = 0  c = 3 
+
+    for (r = 0; r < 3; r++)
+    {
+        for (c = 0; c < 4; c++)
+        {
+            // r = 0 c = 3 
+            ptr = &arr[r][c]; 
+            fun(&ptr); // &arr[0][3] is passed ( call is given ) 
+            printf("%d ", arr[r][c]); // 8 is printed here ( value updated inside function )
+        }
+    }
+
+    r = 0 c = 2
+    // arr[0][3] => 4 
+    //              &arr[0][3]     cnt = 3 (cnt is updated in previous iteration ) 
+    void fun(int **const pp)
+    {
+        if (cnt++ % 2 == 0) if( 3 % 2 == 0) => if(F)=>False
+            **pp = **pp + sizeof('A') / 2;  // skipped 
+        else
+            **pp = **pp + sizeof(3.142) / 2; 
+                 =   4  +   8 / 2 
+                 =   4  + 4 
+                 =    8  
+                
+                 
+        // arr[0][3] is updated to 8          
+        return;
+    }
+    
+
+
+*/

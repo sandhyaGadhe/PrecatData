@@ -1,0 +1,74 @@
+1. Which of the following is not in the  V’s of big data ?
+Answers : 2 (5V : volume,velocity,variety,varacity,value)
+1. Volume
+2. Vocalocity
+3. Velocity
+4. Veracity
+
+2. Which of the following is example of NoSQL?
+Answers : 4( MongoDB,couchDB,couchBase,HBase,Redis,Riak,Neo4J)
+1. PostgreSQL
+2. Oracle
+3. MySQL
+4. MongoDB
+
+3. SQL commands are mainly categorized into ______ categories.
+Answers : 2 (DDL, DML, DQL,DCL,TCL)
+1. 4
+2. 5
+3. 6
+4. 7
+
+4. Which of the following statement is incorrect about NoSQL Databases?
+Answers : 2 (Not only Sql  or non-SQL)
+1. No declarative query language
+2. Stands for NOt SQL
+3. Designed for Horizontal scaling
+4. Gives high performance, high availability
+
+5. Transaction of data of the bank is a type of______________.
+Answers : 1
+1. Structured data
+2. Unstructured data
+3. Semi-Structured data
+4. Cross-Structured data
+
+6. Which of the following is not a example of Unstructured data?
+Answers : 3
+1. Text file
+2. Audio file
+3. XML file
+4. PDF file
+
+7. What is big data?
+Answers : 4
+1. Large volume of data
+2. High velocity data
+3. Structured and unstructured data
+4. All of above
+
+8. Veracity in Big data means______________.
+Answers : 3
+1. The data is generated with high speed
+2. The data is huge
+3. The data is reliable and trustworthy
+4. The data management
+
+9. Which technology is commonly used storing and processing bigdata?
+Answers : 2
+1. Relational database
+2. Nosql database
+3. Flat-file database
+4. XML  database
+
+10. NoSQL is not suitable for which of the following requirement?
+I-ACID transactions
+II-Need high consistency
+III-Multiple relations
+IV-Horizontal scaling.
+
+Answers : 4
+1. I,III
+2. I,IV
+3. II,III,IV
+4. I,II,III

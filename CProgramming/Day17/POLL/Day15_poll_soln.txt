@@ -1,0 +1,60 @@
+// #include <stdio.h>
+// #include <string.h>
+// int main()
+// {
+// #define sunbeam "Karad SunBeam\n"
+// #define SUNBEAM "Pune SunBeam\n"
+// #define Sunbeam strlen(SUNBEAM) - 2 * 2 * 2
+
+// #ifdef SUNBEAM
+//     printf(SUNBEAM);
+// #endif
+// #ifdef SUNBEAM
+//     printf(Sunbeam + SUNBEAM);
+// #endif
+//     return 0;
+// }
+// /*
+// int main()
+// {
+
+//     printf("Pune SunBeam\n");
+
+//     printf(strlen("Pune SunBeam\n") - 2 * 2 * 2 + "Pune SunBeam\n");
+//                        13             - 2 * 2 * 2
+//                        13             -   8
+//                        5
+//                    5  + "Pune Sunbeam"
+//                      prints Sunbeam
+
+//     O/P is  Pune SunBeam
+//             Sunbeam
+//     return 0;
+// }
+// */
+
+
+#include<stdio.h>
+#define float double
+int main( void )
+{
+float pi=3.142f;
+float *i = &pi, j=56.22f;
+double *I= (double*)&pi, J=56.22;
+printf("sizeof(i)=%d sizeof(j)=%d",sizeof(i),sizeof(j));
+return 0;
+}
+/*
+
+int main( void )
+{
+double pi=3.142f;
+double *i = &pi, j=56.22f;
+double *I= (double*)&pi, J=56.22;
+printf("sizeof(i)=%d sizeof(j)=%d",sizeof(i),sizeof(j));
+                                      4     ,   8(considered as double )  
+return 0;
+}
+
+*/
+

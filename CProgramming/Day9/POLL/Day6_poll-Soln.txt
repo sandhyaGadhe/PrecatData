@@ -1,0 +1,112 @@
+// #include <stdio.h>
+// int main(void)
+// {
+// int value=1;
+// if( value!=1) //if(1!=1)=>if(F)( if block is skipped )
+// {
+//     // skipped if block 
+// Hinjewadi: //control comes here from case 1 ( goto statement) 
+// printf("Sunbeam");
+// return 0;
+// }
+// switch(value++) //value is associated first as 1 and then incrmented to 2 
+// {
+
+// default: printf("error"); goto Karad;
+
+// //case 1 is present 
+// //goto statement will take control to identfier Hinjewadi(backward jump)
+// case 2 : case 1 : goto Hinjewadi; break;printf("Sun");
+
+// case 3: printf("beam");break;
+// }
+// Karad:
+// printf("\n Pune Karad");
+// return 0;
+// }
+**********************************************
+
+// #include <stdio.h>
+// int main( void )
+// {
+// int c = 5 ^ 7; printf("%d\t", c);// prints 2 
+// /*
+//         c = 5 ^ 7
+
+//         binary of 5 => 0000 0101
+//         binary of 7 => 0000 0111 
+//         ----------------------------
+//                        0000 0010 (decimal is 2)
+
+// */
+// int d = c & 3; printf("%d\t", d); // o/p is 2 
+// /*
+//             d = c & 3;
+//             c = 2 
+//          binary of 2 => 0000 0010 
+//          binary of 3 => 0000 0011       
+//         -----------------------------
+//                         0000 0010 (decimal is 2)
+// */
+// int f = d ^ c; printf("%d\t", f);//0 
+// /*
+//         f = d ^ c
+//         d = 2 
+//         c = 2 
+
+//         binary of 2 => 0000 0010 
+//         binary of 2 => 0000 0010 
+//         ---------------------------
+//                        0000 0000 ( decimal is 0 ) 
+
+// */
+// return 0;
+// }
+
+*********************************************************************
+
+// #include<stdio.h>
+// int main( void )
+// {
+// int i=128;
+// if (printf("0")) // prints 0 ( printf returns 1 =>if(1)=>if(T))(if block executed)
+// i >>= 4;
+// /*
+//     i>>=4 
+//     i = i >> 4 
+    
+//          0000 0000 0000 0000 0000 0000 1000 0000    
+//                       >>4 
+//          0000 0000 0000 0000 0000 0000 0000 1000  
+//          (decimal o/p is 8) => ans is 8                
+    
+// */
+// else
+// i <<= 2; //skipped
+// printf("%d", i); // prints 8 
+// return 0;
+// }
+
+*************************************************************************
+
+// #include<stdio.h>
+// int main( void )
+// {
+// char check = 'a'; // 97 is copied into check variable 
+// if( check>=65 && check<=122) //if(65>=65 && 65<=122)=>if(T)=>if block executed
+// {
+// printf("\n SunBeam"); //prints Sunbeam 
+// switch (check) // 97 is passed 
+// {
+// //no matching case so defualt case is handled 
+// case 0 || 'a' : printf("Sun ");//it is considered as case 1:  
+// case 1 && 0 : printf("Beam ");break;//it is considered as case 0: 
+// default : printf(" Karad");// prints Karad 
+// }
+// printf("");
+// }
+// else
+// printf("Hinjewadi IT Patk"); 
+// return 0;
+// }
+

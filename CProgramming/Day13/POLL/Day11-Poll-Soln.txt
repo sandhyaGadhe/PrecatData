@@ -1,0 +1,159 @@
+// #include <stdio.h>
+// unsigned char *convert1(int *data) // *data = 511
+// {
+//     // return only 1 byte ( scale factor of unsigned char * is 1 byte)
+//     return (unsigned char *)data; // scale factor 1 byte
+//     /*
+//             0000 0000 0000 0001 1111 1111
+//               1 byte is read and returned ( from right side )
+//                    1111 1111 ( decimal of 255)
+//     */
+
+// }
+// char *convert2(int *data) //address of a is catched here ( a is 256 now)
+// {
+//     return (signed char *)data; //scale factor is 1 byte
+//     /*
+//             Binary of 256 is
+//             0000 0000 0000 0001 0000 0000
+//             ( it will read only 1 byte and returned ( from right side ))
+//                     0000 0000 is returned ( decimal is 0 )
+//     */
+// }
+// int main(void)
+// {
+//     int a = 511;
+//     /*
+//             a = 511
+//             binary of 511 is
+//             0000 0000 0000 0001 1111 1111
+//     */
+//     unsigned char *data1 = NULL;
+
+//     char *data2 = NULL;
+
+//     data1 = convert1(&a); // address of 511 is passed to calling function
+//     // 255 is returned from the calling function
+
+//     printf("%d ", *data1);// 255
+
+//     ++*data1; // *data1 => ++255 ( data1 is of unsigned char type)
+//     // only 1 byte is considered and 1 is added inside the binary
+//     /*
+//             0000 0000 0000 0001 1111 1111 ( binary of 511)
+//             only 1 byte is considered because scale factor of unsigned char is 1 byte
+//             read 1 byte from right side from 511 and add 1 into it
+
+//             1111 1111 ( binary of 255)
+//        +            1
+//             ----------
+//             0000 0000 ( decimal is 0)
+//                last 8 bits from 511 are changed to 0000 0000
+
+//          now updated a is 0000 0000 0000 0001 0000 0000 ( a is updated ) 
+//                 (decimal of 256 )
+
+//     */
+//     //printf("\n a = %d\n",a);  // a is updated to 256
+
+//     data2 = convert2(&a); // address of a is passed
+//     // 0 is returned from the calling function
+//     printf("%d ", *data2); // 0 is printed here
+//     return 0;
+// }
+
+#include <stdio.h>
+int update1(int *p1) // *p1 => 100  
+{
+    int value = *p1 ? ++*p1 : --*p1;
+    //          100 ? T 
+    //                ++*p1 is returned => 101 is returned 
+    // p1 is updated to 101 ( i.e no is updated to 101 )
+    return value;
+}
+int update2(int *p1) // *p1 => 101 ( updated in last call )
+{
+    int value = *p1 ? --*p1 : ++*p1;
+    //          101 ?  T
+    //            101 => 100 ( i.e no is updated again to 100 )       
+    return value;
+}
+int main(void)
+{
+    const int no = 100;
+    int *const no_ptr = &no;
+    printf(" %d ", update1(no_ptr) + update2(no_ptr));
+    //                  101        +  100 => 201 ( is printed )
+
+    // now no is 100 
+    printf(" %d ", update2(no_ptr) + update1(no_ptr));
+                  
+    return 0;
+}
+/*
+// in first call 
+int main(void)
+{
+    const int no = 100;
+    int *const no_ptr = &no;
+    printf(" %d ", update1(no_ptr) + update2(no_ptr));
+    //                  101        +  100 => 201 ( is printed )
+
+    
+    printf(" %d ", update2(no_ptr) + update1(no_ptr));
+                  
+    return 0;
+}
+
+
+// IN first call 
+int update1(int *p1) // *p1 => 100  
+{
+    int value = *p1 ? ++*p1 : --*p1;
+    //          100 ? T 
+    //                ++*p1 is returned => 101 is returned 
+    // p1 is updated to 101 ( i.e no is updated to 101 )
+    return value;
+}
+int update2(int *p1) // *p1 => 101 ( updated in last call )
+{
+    int value = *p1 ? --*p1 : ++*p1;
+    //          101 ?  T
+    //            101 => 100 ( i.e no is updated again to 100 )       
+    return value;
+}
+
+***************************************************
+
+// in second  call ( a is 100 now )
+int main(void)
+{
+    const int no = 100;
+    int *const no_ptr = &no;
+    printf(" %d ", update1(no_ptr) + update2(no_ptr));
+    
+    printf(" %d ", update2(no_ptr) + update1(no_ptr));
+    //                   99        +  100  => 199 is printed 
+
+    return 0;
+}
+
+// In second call 
+
+int update1(int *p1)  // *p1 => 99 
+{
+    int value = *p1 ? ++*p1 : --*p1;
+    //           99 ? T 
+    //          ++*p1 => 99 => 100  ( 100 is returned )
+          
+    return value;
+}
+int update2(int *p1)  // *p1 => 100 
+{
+    int value = *p1 ? --*p1 : ++*p1;
+    //          100 ?   T 
+    //              => --*p1 => 100 => 99 ( 99 is returned )    
+    return value;
+}
+
+*/

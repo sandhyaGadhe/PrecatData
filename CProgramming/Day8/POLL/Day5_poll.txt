@@ -1,0 +1,148 @@
+
+#include<stdio.h>
+int main(void)
+{
+int k=-200, num = 100, ans=200;
+ans+=(num>50 ? num<=10 ? (k+=500) : (k=+300) : (k=+200));
+
+/*
+       ( num>50 ? ( num<=10 ? (k+=500) : (k=+300)  ) : (k=+200));
+       ( 100>50)? ( 100<=10 ?          :           ) : (k+=200)); 
+       ( 100>50)? ( F       ?  skipped : (k=+300)  ) : (k+=200)); 
+          True                            k=300 
+                                          Here k is assigned to 300
+    ( 100>50)?( 300 ) :(k+=200));        
+      condtn ?  exp1      : exp2 
+        T    ?  evaluated : skipped 
+       300 is final o/p 
+   ans = ans + 300                                                                                       
+       = 200 + 300 
+       = 500  
+*/       
+printf("num=%d\tans=%d\tk=%d", num, ans, k);
+//                             100  500  300 
+return 0;
+}
+
+
+// #include <stdio.h>
+// int main( void )
+// {
+
+// int val1=11, val2=11, val3=11;
+// val2 += val1; //val2 => val2 + val1 => 11 + 11 => 22 ( val2 => 22)
+// val3 += val2; //val3 = val3 + val2 => 11 + 22 => 33  ( val3 => 33)
+
+// val3 = (val2++),val1++,val2++ ;
+// //     (22++) ,11++ , 22++; ( val2 is incremented 2 times ) 
+// //val3 is assigned to 22 and then incremented to 23 
+// //       23 ,  12 , 24 ( val2 is 24 )
+// //val3 = > 22 
+// //val1 => 12 
+// //val2 => 24     
+
+
+// val1 = val3++,val2++,val3++;
+// //   = 22++ , 24++, 22++ (val3 is post incrmented 2 times )
+// //first val1 is assigned to 22 and then post incremented 
+// //val1 => 22 
+// //val3 => 23 ( post incrmented) and again 24 
+
+// //val3 => 24 
+// //val2 => 25 
+// //val1 => 22  
+
+
+// val2 = ((val1--,--val3),--val1) ;
+// //     ((22--,--24),--22) ;
+// //     (21,23),20); // val1 is decremented 2 times 22=>21 and then 21 => 20
+// //val2 => ( (21,23),20)
+// //     => ( 23,20)
+// //     =>   20      
+// //val2 is assigned with val1 value  (righmost)
+// //val1 is 20 so 20 is assigned to val2 
+// // val2 = 20
+// // val1 = 20  
+// // val3 =>23 
+
+// printf("val1=%d val2=%d val3=%d",val1,val2,val3);
+// return 0;
+// }
+
+
+
+// //What will be output of following code ?
+// #include<stdio.h>
+// int main( void )
+// {
+// int num1=12,num2=12,num3;
+// num1 *= num1; // num1 = num1 * num1 => 12 * 12 => 144 (num1 is updated to 144) 
+// num2 += num1 ;// num2 = num2 + num1 => 12 + 144 =>156   
+// num3 = printf("%10d",++num1 )+ ++num2;
+// //                     1 4 5 (post-incremented)  
+// //       - - - - - - - - - - 
+// //                     10    +  157 => 167 ( num3 is assigned to 167) 
+// //      printf returns 10 as it prints 10 spaces on terminal    
+
+// printf(" %d",num3);//prints 167 
+// return 0;
+// }
+
+
+//What will be output of following code ?
+// #include <stdio.h>
+// int main()
+// {
+// int a = 10, b = 5, c = 5, d;
+// d = ~!b + b == c ;
+// //~!b
+// //!b => b is true ( 5 )=>!T=>F=>0
+// //~0 => -(n+1)=> -(0+1)=>-1  
+// /*
+//      -1 + 5 == 5 
+//         4   == 5 ( false )
+//             0 
+// d is assigned to 0 
+
+// */   
+// d-= ~d; 
+// /*
+//     ~d => 0 => -(n+1)=>-(0+1)=>-1 
+//     d-=~d 
+//     d = d - ~d 
+//       = 0 - -1 
+//       = 1 
+// */
+// printf("\td=%d", d);//1 
+// d+= ~d; 
+// /*
+//     d is 1 
+//     ~d => -(n+1)=>-(1+1)=>-2 
+//     d+=~d 
+//     d = d+~d 
+//       = 1+-2 
+//       = -1 
+// */
+// printf("\td=%d", d);//-1 
+// return 0;
+// }
+
+
+//What will be output of following code ?
+#include<stdio.h>
+int main( void )
+{
+int num1 = 0, num2 = -1 , num3 = -2, num4 = 1, ans;
+ans = num1++ && num2++ || ++num4 && num3++;
+//   (num1++ && num2++)|| (++num4 && num3++);
+//   (F++    &&  XXX)  || 
+//             F       || (++T && T++)
+//                  T   
+// num1 is post-incremented => 0 to 1 
+// num2 is Skipped
+// num4 is preincremented to 2 
+// num3 is postincremented to -1 
+printf("%d %d %d %d %d",num1, num2, num3, num4, ans);
+//                       1    -1    -1    2     1 
+return 0;
+}

@@ -1,0 +1,29 @@
+1. what is wrong about singly linked list?
+2. What would be the asymptotic time complexity to add a node at the end of singly linked list, if the pointer is initially pointing to the head of the list?
+3. which statement is True about circular linked list?
+4. Which of the following is false about a doubly linked list?
+5. Which of the following operations is performed more efficiently by doubly linked list than by singly linked list?
+6. What is the output of the following code for start pointing to first node of the given list? 1->2->3->4->5->6
+ void Linkedlist(struct node* start)
+{
+if(start == NULL)
+       return;
+printf("%d",start->data);
+
+if(start->next != NULL)
+  Linkedlist(start->next->next);
+printf("%d",start->data);
+}
+Answers
+1. 1 4 6 6 4 1
+2. 1 3 5 1 3 5
+3. 1 2 3 5
+4. 1 3 5 5 3 1
+7. consider following implementation is for the unsorted doubly linked list. And consider with only head pointer. Time complexity of the which given implementation is o(1)?
+8. Below one is add_first() functionality code for empty Doubly CircularLinked list. Find the correct statement to replace ????
+	head = newnode;
+	tail = newnode;
+	tail ->next = head;
+	????
+9. A linked List where there are no NULL links is :
+10. What is the worst case time complexity to search an element from a singly linked list of length n.

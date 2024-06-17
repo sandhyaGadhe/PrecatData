@@ -1,0 +1,69 @@
+1. Which of the following communication comes under Point - to - Point Connections?
+Answers:1
+1. Bus Topology
+2. Mesh Toplology
+3. Ring Topology
+4. Both B and C
+
+2. In which of the following communication generally the Microwaves are used?
+Answers : 2
+1. Indoor LANS
+2. Wireless LAN Communctions
+3. Communication Between PC and Peripheral Devices
+4. All of the Above
+
+3. Walkie-talkies and CB (citizens band) radios are the example of
+Answers :3
+1. Simplex 
+2. Full Duplex
+3. Half Duplex
+4. None
+
+4. When two or more networks are connected they become
+Answers :4
+1. Internetwork
+2. LAN
+3. Internet
+4. Both A an
+
+5. Communcation between Computer and keyboard uses?
+Answers: 2
+1. Full duplex
+2. Simplex
+3. Half Duplex
+4. None of the above
+
+6. TCP/IP is a
+Answers: 1
+1. Five-layer hierarchical protocol suite
+2. Seven-layer hierarchical protocol suite
+3. Single Layer protocol
+4. None of the Above
+
+7. Which of the following is standard for Ethernet?
+Answers :3
+1. 802.11
+2. 802.15
+3. 802.3
+4. None of the above
+
+8. Which of the following topology requires repeaters (hub) to be placed to connect nodes?
+Answers: 4
+1. Mesh
+2. Ring
+3. Bus
+4. Star
+
+9. Which of the following can be considered as Wireless waves?
+Answers : 4
+1. Radio wave
+2. Microwave
+3. Infrared waves
+4. All of the Above
+
+10. Which of the following is standard for Ethernet?
+Answers : 3
+1. 802.11
+2. 802.15
+3. 802.3
+4. None of the above

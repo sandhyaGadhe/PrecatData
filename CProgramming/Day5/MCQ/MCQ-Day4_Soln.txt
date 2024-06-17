@@ -1,0 +1,133 @@
+
+//IMPORTANT NOTE : Revise the MCQ minimum 3 times note down and prepare your own notes 
+
+1.#include <stdio.h>
+int main(void)
+{
+int a,b,c;
+a=111;
+b=222;
+// printf returns number of characters ( count ) as int to you 
+c=printf("%d",a) + ++b; // pre-increment 
+//	  111 =>3 	
+//           3 + +222 => 222 will pre-increment to 223 
+//           it will print 111 on terminal and return 3 as count    
+//         111 => prints 3 digits so it will return 3  
+//           3  + 223      
+printf(" %d",c);// 226 
+
+return 0;
+}
+
+****************************************************************************
+
+2.What will be the output of the following:
+#include <stdio.h>
+int main( void )
+{
+float x;
+//printf("%f",(float)2.2/10.0); 
+x = 0.22f == (float)(2.2/10.0); // => (float)(2.2/10.0) => 0.22
+//  0.22f == 0.22f will return 1
+// 1 is stored in x  
+// == is a relational operator 
+// relational operator gives o/p as 1 if expression is true and 0 if false 
+ 
+printf("x=%-2.2f", !x);
+//     !x => ! is a logical not operator 
+//   x is 1 so logical not of x !x => !1 => 0 
+// so answer is 0 
+// -2.2f is a width specifier 
+//  0 . 0 0 is a the answer 
+//  - -  
+
+// return 0;
+// }
+
+*******************************************************************************************
+
+
+3.// #include <stdio.h>
+// int main(void)
+// {
+// int a,b,c;
+// // printf returns count that that is printed on terminal 
+// // \t \n \r is considered as 1 count 
+
+// a=printf("\t \"SunBeam\" - \t'IT Park' \t");
+// // above printf returns 26 as count 
+// // so a = 26 
+
+
+// b=printf("\t \'Pune\' \t");
+// // above printf returns 10 as a count 
+// // so b = 10  
+
+// c=printf("\n a = %d",a)+ ++b;
+// //           a = 26 ( 26 will be printed on terminal )
+// //total count is 8 ( \n and space is also counted as 1 )
+// //             8      +  11 
+// //              19   
+
+// printf(" c = %d",c); //19 
+// return 0;
+// }
+
+**********************************************************************************************
+
+4.// //if we enter 10 as a value of a 
+// #include<stdio.h>
+// int main(void)
+// {
+// int a,b, result=0; // Line 3
+// printf("\n Enter value of a ="); // Line 4
+// b=scanf("%d", &a); // Line 5 => 10 is entered as a i/p 
+// // scanf returns number of scanned values from the terminal 
+// // above scanf is scanning only one value so it will return 1 
+// // b = 1 
+
+// result = a / (sizeof(short int)- b); // Line 6
+// //       10 / ( 2 - 1) // sizeof short int is 2 bytes 
+// //       10 / 1 
+// //       10 
+// // result is 10 here   
+
+// printf("result=%d \n",result); // Line 7
+// // result is printed as 10 here 
+
+// result = a / (sizeof(char)- b); // Line 8 
+// //     = 10 / ( 1 - 1 ) // sizeof of char is 1 byte 
+// //       10 / 0 
+// //       divide by zero not possible 
+// //       results in runtime error  
+// // line number 8 is causing runtime error 
+
+//  //control will not reach line number 9 as above runtime error has occured 
+// printf("result=%d \n",result); // Line 9
+
+// return 0;
+// }
+
+********************************************************************************
+
+//What will be the output of the following:
+5.#include <stdio.h>
+int main( void )
+{
+printf("\n ans1=%d ans2=%x ans3=%o", 0100,0100,0100);
+/*
+    any number starting with 0 is considered as octal number 
+    0100 is a octal number 
+
+    ans1 = %d ( i.e decimal representation)
+    ans2 = %x ( i.e hexadecimal representation)
+    ans3 = %o (i.e octal representation)
+
+*/
+return 0;
+}
+
+
+  
+
+

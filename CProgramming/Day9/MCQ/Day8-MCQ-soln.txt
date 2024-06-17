@@ -1,0 +1,137 @@
+#include<stdio.h>
+int main(void)
+{
+typedef enum qualification {CSC=-3, IT,CIVIL, ENTC, MECH=-2 , 
+CHEM, PROD }QUAL;
+enum qualification q1= ENTC;
+QUAL q2= PROD;
+if( q1== CSC) // if( 0 == -3) => if(F)
+printf("Computer Science Engineering");
+else if (q1== IT) // if(0 == -2) => if(F)
+printf("Information Technology Engineering");
+else if (q1==CIVIL) // if(0 == -1) => if(F)
+printf("Civil Engineering");
+else if (q2==ENTC) //if(0 == 0) => if(T)
+printf("Electronics & Communication Engineering"); //prints 
+else
+printf("Engineering "); 
+
+if (q2==MECH ) //if(0 == -2) => False 
+printf(" / Mechanical Engineering");
+else if (q2==CHEM) // if(0 == -1) => False 
+printf(" / Chemical Engineering ");
+else if (q1==PROD) // if( 0 =0) => True  
+printf(" / Production Engineering "); //prints 
+else
+printf(" / Engineering "); 
+return 0;
+}
+*****************************************
+
+// #include<stdio.h>
+// int main(void)
+// {
+// enum courses { DAC=240, KDAC=120 ,DMC=120 ,DESD=120
+// ,DBDA=60, DITISS=60};
+
+// typedef enum courses COURSES;
+// enum courses c1= DAC / KDAC * DMC ;
+// /*
+//           DAC / KDAC * DMC ;
+//           240 / 120 * 120
+//             2       * 120
+//           240
+// */
+// // c1 = 240
+// COURSES c2= (KDAC+DMC+DESD) /DBDA * DITISS;
+// /*
+//             (KDAC+DMC+DESD) /DBDA * DITISS;
+//             (120 + 120 + 120) / 60 * 60
+//                 360  / 60 * 60
+//                   6   *  60
+//                   360
+//   c2 = 360
+// */
+
+// printf("\n c1=%d c2=%d", c1, c2 );//c1=240 c2=360
+// COURSES temp=c2; // c2 is copied into temp( 360 is copied into temp)
+// c2=c1;//240 is copied into c2 ( c2 = 240)
+// c1=temp;//360 is copied into c1 ( c1 = 360)
+// printf("\t c2=%d c1=%d", c2, c1 );
+// //                       240 360
+// return 0;
+// }
+
+// #include<stdio.h>
+// enum month {Jan=014, Feb, Mar, Apr, May, Jun, Jul};
+// // 014 is octal ( decimal of 014 is 12 )
+// typedef enum month MONTHS;
+// int main(void)
+// {
+// MONTHS m;
+// printf("%d, %d, %d, %d, %d, %d, %d , %d" ,Jun,May,Apr,Feb,Jan 
+// , Jul,Mar, sizeof(MONTHS)/sizeof(enum month ));
+
+// // sizeof enum is 4 bytes ( 4 / 4 => 1 )
+// return 0;
+// }
+
+***********************************************************
+
+// #include<stdio.h>
+// int main(void)
+// {
+// enum courses {DAC=240,KDAC=120,DMC=KDAC,DESD=DMC, 
+// DBDA=60 , DITISS=DBDA};
+// typedef enum courses COURSES;
+// COURSES c1= KDAC ; //KDAC value is 120( 120 is copied into c1)
+// switch (c1-DBDA-DITISS ) // 120-60-60=>120-120=>0 (0 is passed to switch)
+// {
+// //no case match so default case gets executed 
+// case 240 : printf(" SunBeam DAC Pune ");
+// case 120 : printf(" SunBeam DAC Karad ");
+//  printf(" SunBeam DMC Pune ");
+//  printf(" SunBeam DESD Pune "); break;
+// case 60: printf(" SunBeam DBDA Pune");
+// default: printf(" SunBeam DITISS Pune"); break;
+// }
+// return 0;
+// }
+
+*********************************************************
+
+
+// #include<stdio.h>
+// int main(void)
+// {
+// typedef enum courses{DAC=0,KDAC,DMC,
+// DESD, DITISS}LOCATION;
+
+// typedef enum location{MARKETYARD=-1,HINJAWADI, KARAD, 
+// SATARA}COURSES;
+
+// LOCATION loc=DMC;//(2 is copied into loc)
+// COURSES cou=KARAD; //(1 is copied into cou)
+
+// switch (loc)//( 2 is passed to switch)
+// {
+//   //case 2 is matched 
+// case MARKETYARD :  //case -1: 
+// printf("\n MARKETYARD LOCATION ");break;
+// case HINJAWADI : printf("\n HINJAWADI LOCATION "); break;//case 0: 
+// case KARAD : printf("\n KARAD LOCATION ");break;//case 1: 
+// case SATARA : printf("\n SATARA LOCATION ");break;//case 2: 
+// // prints SATARA LOCATION
+// }
+// switch (cou) //1 is passed to switch 
+// {
+//   //case KDAC is match ( case 1: )
+// case DAC : printf(" and DAC COURSE "); break; //case 0: 
+// case KDAC : printf(" and KDAC COURSE "); break;//case 1: 
+// case DMC : printf(" and DMC COURSE "); break; //case 2: 
+// case DESD : printf(" and DESD COURSE "); break;// case 3: 
+// case DITISS : printf(" and DITISS COURSE "); break;//case 4: 
+// }
+// return 0;
+// }
+**************************************************************************

@@ -1,0 +1,68 @@
+1. Service-point addressing is responsibility of which layer in OSI model?
+Answers :  3
+1. Data Link Layer
+2. Application Layer
+3. Transport Layer
+4. Physical Layer
+
+2. Which of the following protocol is used to associate a logical address with a physical address?
+Answers :3
+1. Reverse Address Resolution Protocol
+2. Internet Control Message Protocol
+3. Address Resolution Protocol
+4. Internet Group Message Protocol
+
+3. Which of the following access method requires that each station first listen  to the medium before sending?
+Answers : 2
+1. MA
+2. CSMA
+3. FDMA
+4. CDMA
+
+4. Which of the following requires that each station first listen to the medium before sending?
+Answers :1
+1. CSMA
+2. MA
+3. FDMA
+4. CDMA
+
+5. Logical addressing is done at which of the following Layer in OSI model?
+Answers : 1
+1. Network layer
+2. Data Link Layer
+3. Transport Layer
+4. Physical Layer
+
+6. Which of the following protocols is used in E-mail
+Answers :4
+1. IMAP
+2. POP3
+3. SMTP
+4. All of the above
+
+7. Which of the following layer enables the user, whether human or software, to access the network in OSI model?
+Answers : 2
+1. Presentation layer
+2. Application Layer
+3. Network Layer
+4. None of the Above
+
+8. A device operating at network layer is called
+Answers: 1
+1. Router
+2. Equalizer
+3. Bridge
+4. Repeater
+9. The Hamming distance between 10101 and 11110 is ?
+Answers :4
+1. 2
+2. 4
+3. 1
+4. 3
+
+10. TCP and UDP protocols are operated on which layer of TCP/IP?
+Answers :1
+1. Transport Layer
+2. Network Layer
+3. Data Link Layer
+4. Application Layer

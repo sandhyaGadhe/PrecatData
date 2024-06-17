@@ -1,0 +1,151 @@
+// #include<stdio.h>
+// int main(void)
+// {
+// int x=3, y=4, z=2;
+// int result = ( x > y ) ? (( x > z ) ? x : z) : (( y > z ) ? y : z );
+// /*
+//     ( x > y ) ? (( x > z ) ? x : z) : (( y > z ) ? y : z );
+//     ( 3 > 4) => False => 0 
+//     ( control goes to colon part) i.e 
+//     ( 4 > 2 ) ? y : z ); => 4 > 2 is true so value of y is copied into result
+//     so o/p is 4  
+
+// */
+// printf("\n result=%d", result);
+// return 0;
+// }
+
+// #include <stdio.h>
+// int main( void )
+// {
+// int i=0, j=1, k=2, m;
+// m = i++ || j++ || k++;
+// // logical OR operator is having same precedence 
+// // so associativity is from left to right 
+// //  i++ || j++ || k++;
+// //  ( i++ || j++ ) || k++;
+// //  ( 0++ || 1++ )
+// //        T        || skipped
+// //  expression is evaluated to true so value of m is 1  
+// //  control goes to i and j so i and j is post incremented
+// //  i is post incremented from 0 to 1 
+// //  j is post incremented from 1 to 2  
+// //   k++ is skipped(logical Operator says either of the one operand should be true) so value of k remains same i.e 2 
+
+// printf("\n m=%d i=%d j=%d k=%d", m, i, j, k);
+// //                               1,1,2,2   
+
+//  consider the following values now for next expression 
+// i=0, j=1, k=2, m;
+// m = i++ && j++    && k++;
+//  logical AND operator is having same precedence 
+//  so associativity is from left to right 
+//   (i++ && j++)  && k++;
+//   (0++ && XXX)  && 
+//        F        && skipped 
+//   expression is false so value m is 0 
+//   As left operand is false so j++ is skipped (As logical AND says both should be true) 
+//   and k++ is also skipped 
+//   As logical AND operator says if left operand is true then only control goes to right operand 
+
+//  i++ is post incremented => 1 
+//  j , k , m is skipped as it is skipped so value remains same 
+//  printf("\t m=%d i=%d j=%d k=%d", m, i, j, k);
+//                                    0 ,1,1,2
+// return 0;
+// }
+
+// #include<stdio.h>
+// int main(void)
+// {
+// int num1=50, num2=60, num3=70, result=0;
+// result=!((num3+num2)>(num1 + ((num3+num2+num1)/3)));
+
+// !((num3+num2)>(num1 + ((num3+num2+num1)/3)));
+// !((70 + 60)) > (50+((70+60+50)/3)))
+// !((130)) > (50+((70+60+50)/3)))
+// !((130)) > (50+((180)/3)))
+// !((130)) > (50+60)
+// !((130) > (110)) => Relational operator gives o/p as 1 and 0 
+//  130 > 110=> True => 1 
+//  ! is logical not operator 
+//  !1 => 0  
+//  result = 0 
+
+// printf("\n result = %d", !result - 1);
+// !result - 1
+//  result is calculated as 0 
+//  !result => !0 => 1 
+//    1 - 1 => 0 
+//  so final answer is 0  
+// return 0;
+// }
+
+
+// //What will be output of following code ?
+// #include<stdio.h>
+// int main( void )
+// {
+// int var1=10,var2=20, var3=5;
+// var2-= --var1 - var3++;
+// /*
+//            var2-= --var1 - var3++;
+//                 = --10 - 5++
+//              //predecrement 10 to 9 and post increment 5 to 6 AFTER solving expression
+//              // =   9 - 5  (var1 is pre-decrem to 9) 
+//              //      4 
+//              // var3 is post incre to 6   so var3 = 6     
+
+//           var2- = 4 
+//           var2 = var2 - 4 
+//                = 20 - 4 
+//                = 16         
+
+
+// */
+// printf("val3=%d var2=%d var1=%d", var3,var2,var1);
+// //                                  6 , 16, 9  
+// return 0;
+// }
+
+//What will be output of following code ?
+#include<stdio.h>
+int main(void)
+{
+int t,a=2*3-1,b=1+3*3,c=0+3*3+3*2;
+/*
+    a= 2*3-1 => 5 
+    b= 1+3*3 => 10
+    c= 0+3*3+3*2 
+     = 0+9+6 
+     = 15 
+   so a = 5 , b = 10 , c = 15    
+*/
+t=++a && ++b, ++a, ++a || ++c;
+/*
+    a = 5 , b = 10 , c = 15    
+    (++a && ++b), ++a, ++a || ++c;
+    (++5 &&++10),  => pre-increm  5 to 6 , and pre-increm 10 to 11 
+    ( T  && T)
+     (   T  )
+        1      ,  
+     value of a is 6 now  
+     ++a => 7
+     ( 1, 7 , ++a || ++c) 
+     ( 1 , 7 ,(++7 || XXX ) ) //control dont go to c as left side is true 
+     ( 1 , 7 , (++T || skipped) )
+     //         7=>8 ( a becomes 8 ) 
+     ( 1 , 7 , 1)
+
+      t = 1 , 7 , 1 
+      value of t becomes 1 
+      value of a is 8 
+      value of b is 11
+      value of c is 15
+
+     
+     
+*/
+printf("t=%d a=%d b=%d c=%d",t,a,b,c);
+return 0;
+}

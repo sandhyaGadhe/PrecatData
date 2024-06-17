@@ -1,0 +1,90 @@
+// #include <stdio.h>
+// int main()
+// {
+//     char s[] = "Sunbeam";
+//     int i = 0;
+//     char ch;
+
+//     ch = s[i++]; // i is incremented from 0 to 1 
+//     printf("%c", ch); // S 
+
+//     // i is 1 here 
+//     ch = s[++i]; // s[++i] => s[++1]=>s[2] (s[2] assign to ch)( i is incremented to 2 )
+//     printf("%c", ch); //n 
+//     // i is incremented to 2 now 
+
+//     // i is 2 now  
+//     ch = ++i[s]; // ++2[s]=> s[2] is n incrmented to o ( next char)
+//     printf("%c", ch); // o 
+    
+//     // i is 2 now 
+//     ch = i++[s]; // i++[s] => i[s] => s[i] => s[2] => o ( updated in previous)
+//     printf("%c", ch); //o ( i is post-incrmented to 3 now) 
+    
+//     printf(" \n %s %d ", s,i);//Suobeam
+//     return 0;
+// }
+
+//*******************************************
+
+// #include <stdio.h>
+// int main(void)
+// {
+// char str[] = "%d %s";
+// char arr[] = "PreCAT@SUNBEAM";
+// printf(str, 0[arr], &2[arr + 4]);
+// // &2[arr + 4] => It's equivalent to &arr[2 + 4]
+// return 0;
+// }
+
+************************************************************
+
+#include <stdio.h>
+int main(void)
+{
+    void const *ptr_name = NULL;
+    char ch = 115 - ' ', *name = "SUNBEAM"; // pointer to a string 
+    // ch = 83
+    int j = (++ch, ++ch);
+    //         84 , 85
+    // j = 85  ch = 85 
+    ptr_name = &ch;
+    printf("%c", ((*(char *)ptr_name) - 2)); // 85 - 2 => 83(prints S) 
+    ptr_name = &j; // &j => i.e 85 
+    printf("%c", *(int *)ptr_name); // 85 ( prints U )
+    ptr_name = name; // ptr_name points to "Sunbeam"
+    // consider base address of Sunbeam as 100 
+    printf("%s", (char *)ptr_name + 2); // prints from 102 i.e NBEAM 
+    //                      100  + 2 
+    //                      102 + 2 * 1 
+    //                      102    
+    return 0;
+}
+
+***************************************************************************
+#include<stdio.h>
+#include<string.h>
+int main( void )
+{
+char str[] = "Sunbeam Karad", rev[50];
+int i = strlen(str), j=0;
+
+for( i-- ; i>=0; rev[j++] = str[i--]); 
+rev[j] = '\0';
+puts(rev);
+return 0;
+}
+/*
+char str[] = "Sunbeam Karad", rev[50]="dar";
+int i = strlen(str), j=0;
+// i = 13 
+for(i-- ; i>=0; rev[j++] = str[i--]); // i is 12 now 
+//     12>=0 rev[0++] = str[12--]; // d is copied into  rev[0]=>   d 
+//     11>=0 rev[1++] = str[11--]; // a  is copied into rev[1]=>   a
+//     10>=0 rev[2++] = str[10--]; // r  is copied into rev[2]=>   r
+//     9>=0  rev[3++] = str[9--]; // a  is copied into  rev[3]=>   a
+//     8>=0  rev[4++] = str[8--]; // a  is copied into  rev[4]=>   K
+
+rev[j] = '\0';
+puts(rev);
+*/

@@ -1,0 +1,51 @@
+1. Bayesian network, which consists of _______ showing how events affect each other.
+answer: graph
+
+2. Which algorithms is commonly used for sentiment analysis?
+answer: classification algorithm like linear regression ,naive bayes,support vector machine
+
+3. CNN stands for  _______________ .
+answer: convolation neural network
+
+4. Which of the following is an example of a dimensionality reduction technique? 
+answer: principal componenet analysis (PCA)
+
+5. What is the primary goal of exploratory data analysis?
+answer: look the data before making any assumption
+identify errors as well as understand pattern ,find relationship them
+
+6. Which statistical measure provides a central tendency of a dataset?
+answer: mean
+
+7. Which of the following is an example of a clustering algorithm?
+answer : density biased method
+ hierarchical based method
+ k-mean
+
+8. Artificial neural network is used for 
+I-Classification
+II-Clustering
+III-Pattern recognition
+IV-Robotic
+answer  all of above
+
+9. What is the purpose of feature scaling in machine learning?
+answer: normalizing the range of features in a dataset.  
+
+10. The term __________________ refers
+to different processes, though the most common is putting data into ordered rows and columns in a matrix format (also called flat-file transformation).
+ANSWER: DATA TRANSFORMATIONS
+11. The __________ laws allow robots to work with humans without any risk .
+
+12. Which of the following is an examples of supervised learning
+13. Which of the following is an example of a supervised learning problem?
+14. Suppose, your target variable is whether a passenger will have survived or not using Decision Tree.  What type of tree do you need to predict the target variable?
+15. Which of the following is the branch of Artificial Intelligence?
+16. Algorithm is
+17. What  is the purpose of a decision tree algorithm ?
+18. ______________, a pioneering American computer scientist and inventor, earned the title "Father of Artificial Intelligence"
+19. Decision trees are used to solve
+I-classification problems
+II-regression problems
+III-to predict continuous outcomes
+20. Which is not a type of Machine learning?

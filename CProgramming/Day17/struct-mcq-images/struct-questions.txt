@@ -1,0 +1,63 @@
+#include<stdio.h>
+struct s2 
+{
+char *cp;
+struct s1
+{
+char a[4];
+char *p;
+}o1;
+}o2 = {"DAC", "DESD", "DMC"};
+ 
+int main(void)
+{
+printf("%s %s\n",++o2.cp,++o2.o1.p);
+return 0;
+}
+A. AC MC
+B. AC ESD
+C. MC AC
+D. ESD MC
+Answer: A
+
+***********************************************
+
+#include<stdio.h>
+struct s1
+{
+char a[4];
+char *p;
+}o = {"DAC","DITISS"};
+int main(void)
+{
+o.p = o.a+1;
+printf("%c %s\n",*o.p,o.a);
+return 0;
+}
+
+A. I DAC
+B. A DAC
+C. A DITISS
+D. I DITISS
+Answer: B
+
+**************************************************
+
+#include<stdio.h>
+int main(void)
+{
+struct s
+{
+char *p;
+int i;
+struct s *sp;
+}a[] = {"abcd",1,a+1,"efgh",2,a+2,"ijkl",3,a}, *p;
+p = a;
+printf("%s %s %s\n",a[0].p,p->p,a[2].sp->p);
+return 0;
+}
+A. abcd abcd ijkl
+B. abcd efgh ijkl
+C. abcd abcd efgh
+D. abcd abcd abcd
+Answer: D

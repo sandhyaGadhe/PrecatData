@@ -1,0 +1,511 @@
+1. The term HTTP stands for?
+Answers:3
+1. Hyper terminal tracing program
+2. Hypertext tracing protocol
+3. Hypertext transfer protocol
+4. Hyper Text Test program
+
+2. Which of the following is reliable communication.
+Answers : 1
+1. TCP
+2. IP
+3. UDP
+4. All of them
+
+3. In computer network a short messege that travels around the communication medium is called
+Answers:4
+1. Ring
+2. Star
+3. Mesh
+4. Token
+
+4. The last address of the IP address represents:
+Answers:3
+1. Unicast Address
+2. Network Address
+3. Broadcast Address
+4. None of the above
+
+5. What is the natural mask for a class C Network?
+Answers:2
+1. 255.255.255.1
+2. 255.255.255.0
+3. 255.255.255.254
+4. 255.255.255.255
+
+6. _________________ member functions are used to set values of private data members by  checking the  correctness of the value to be set to data member.
+Answers:2
+1. Accessors
+2. Mutators
+3. getters
+4. valuator
+
+7. Linking of function to function call in execution is called _____________.
+Answers:3
+1. static Binding
+2. compile-time Binding
+3. late binding
+4. abstraction binding
+
+8. What do you mean by up casting ?
+Answers:1
+1. Storing address of derived class object into base class pointer.
+2. Storing address of derived class object into derived class pointer.
+3. Storing address of base class object into base class pointer.
+4. Storing address of base class object into de
+
+9. #include<iostream>
+using namespace std;
+void SWAP(int &n1, int &n2)
+{
+    n1=n1*n2;
+    n2=n1/n2;
+    n1=n1/n2;   
+}
+int main()
+{
+    int no1=1,no2=0;
+    cout<<" no1="<<no1<<" no2="<<no2<<endl;
+    SWAP(no1, no2);
+    cout<<" no1="<<no1<<" no2="<<no2<<endl;
+    return 0; 
+}
+Answers:4
+1. no1=1 no2=0    no1=0 no2=1
+2. no1=0 no2=1    no1=1 no2=0
+3. no1=1 no2=0    no1=1 no2=0
+4. run time error
+
+10. What is the output of following code?
+#include<iostream> 
+using namespace std;
+class One {
+     public:
+     One()
+     { cout << " One's constructor called" << endl;  }
+};  
+class Two {
+     public:
+     Two()
+     { cout << "Two's constructor called" << endl;  }
+};
+class Derived: public One, public Two {
+     public:
+     Derived()
+     {  cout << "Derived's constructor called" << endl;  }
+}; 
+int main()
+{
+   Derived d;
+   return 0;
+}
+ANSWER:2
+1. Compiler Dependent
+2. One′s constructor called 	 Two′s constructor called 	 Derived’s constructor called
+3. Two′s constructor called 	 One′s constructor called 	 Derived’s constructor called
+4. Derived′s constructor called 	 One′s
+
+11. Which of the following member functions is/are not automatically added to every class, if we do not write our own.
+i-Assignment Operator
+ii-Copy constructor
+iii-parameterized constructors
+iv-default constructor
+
+Answers:3
+1. i
+2. i,ii
+3. iii
+4. ii,iv
+
+12. #include<iostream>
+int main()
+{
+    int x=10,y=0;
+    try
+    {
+        if(y==0) 
+            throw 1;
+        else
+        {
+            int res=x/y;
+            std::cout<<"res::"<<res<<std::endl;
+        }
+    }
+    catch(int)
+    {
+        std::cout<<"Enter Other Than 0"<<std::endl;
+    }
+    catch(int)
+    {
+        std::cout<<"can not divide by zero"<<std::endl;
+    }
+    return 0;
+}
+Answers:1
+1. Enter Other Than 0
+2. can not divide by zero
+3. compile time error
+4. run time error
+
+13. Object Oriented language follows -------- approach.
+Answers:2
+1. top-down
+2. bottom-up
+3. both top-down and bottom-up
+4. none of above
+
+14. 'this' pointer is not passed to __________ member functions.
+Answers:3
+1. constructor
+2. mutator
+3. static
+4. virtual
+
+15. If a derived class object is created, which constructor is called first?
+Answers:3
+1. Depends on mode of Inheritance
+2. Derived class constructor
+3. Base class constructor
+4. Depends on how we call the object
+
+16. critical section is a program segment __________?
+Answers:3
+1. which should run in a certain specified amount of time
+2. which avoids dead locks
+3. where shared resources are accessed
+4. which must be enclosed by a pair of semaphor
+
+17. If the initial value of counting semaphore is 9 and after that 3 wait()  operations and 4 signal() operations are applied then what will be the current value of counting semaphore (s) variable ?
+
+Answers:2
+1. 18
+2. 10
+3. 3
+4. 8
+
+18. Main Memory is an example of DRAM.
+Answers:1
+1. True
+2. False
+
+19. In which disk space allocation methods random is possible?
+nswers:4
+1. Contiguous Allocation
+2. Indexed Allocation
+3. Linked Allocation
+4. Both A and B
+
+20. The effective memory access time depends on a
+Answers:2
+1. Miss Ratio
+2. Hit Ratio
+3. Bit Ratio
+4. Byte Ratio
+
+21. Which of the following data structure is used to implememt priority queue?:4
+Answers
+1. Linked List
+2. Array
+3. Binary Heap
+4. All of the above
+
+22. A linear list of elements in which deletion can be done from one end (front) and insertion can take place only at the other end (rear) is known as a
+Answers:1
+1. Queue
+2. Stack
+3. Tree
+4. LinkedList
+
+23. Which of the following is not the application of stack.
+Answers:4
+1. Implementation of Recurrsion
+2. Evaluation of postfix expression
+3. reversing a string
+4. Job Scheduling
+
+24. The time complexity of a bubble sort is ….
+Answers:3
+1. O(n logn)
+2. O(2n)
+3. O(n^2)
+4. O(n)
+
+25. Which of the following algorithms require extra space to sort the elements.
+Answers:3
+1. Selection Sort
+2. Insertion Sort
+3. Merge Sort
+4. Quick Sort
+
+26. The postfix form of the expression (A+ B)*(C*D- E)*F / G is?
+Answers:3
+1. AB+ CD*E - FG /**
+2. AB + CD* E - F **G /
+3. AB + CD* E - *F *G /
+4. AB + CDE * - * F *G /
+
+27. The following postfix expression is evaluated using a stack
+823^/23* + 51* –
+The top two elements of the stack after first * is evaluated
+
+Answers :1
+1. 6, 1
+2. 5,7
+3. 3.2
+4. 1,5
+
+28. The goal of hashing is to produce a search that takes
+Answers:1
+1. O(1) time
+2. O(n) time
+3. O(log n) time
+4. O(n^2) time
+
+29. What will be the time complexity to insert an element at the second position in the linked list.
+Answers:2
+1. O(n)
+2. O(1)
+3. O(log n)
+4. O(n log n)
+
+30. A binary tree in which if all its levels except possibly the last, have the maximum number of nodes and all the nodes at the last level appear as far left as possible, is known as
+Answers:4
+1. Full binary tree
+2. AVL tree
+3. Threaded tree
+4. Complete binary tree
+
+31. Find the output of the following:
+typedef union 
+{   
+    unsigned b1 : 4;
+    signed b2 : 2;
+}TEST;
+int main()
+{
+    TEST t1={0};
+    t1.b1 >> 2;
+    printf("%d",t1.b1);
+    return 0;
+}
+Answers:2
+1. 1
+2. 0
+3. -1
+4. 2
+
+32. #include <stdio.h>
+#define SIZE(z) (sizeof(z) / sizeof(z[0]))
+int main()
+{
+	int i = 0;
+	int arr[5] = { 11, 22, 33, 44, 55 };
+	for(i = 0; i <= (SIZE(arr) -2 ) ; i++)
+	{
+		printf("%d, ",arr[i]);
+	}
+	return 0;
+}// note : consider 32 bit compliation
+
+Answers:2
+1. 11, 22, 33,
+2. 11, 22, 33, 44,
+3. 11, 22, 33, 44, 55
+4. Error
+
+33. Find the output of the following:	
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char s1[] = "hear will let you go ahead";
+    strcat(s1,"\b\b\b\b\bbehind\rf");
+    printf(s1);
+    return 0;
+}
+Answers:1
+1. fear will let you go behind
+2. behind will let you go ahead
+3. hear will let you go ahead
+4. Compile Time Error
+
+34. #include <stdio.h>
+int main()
+{
+	int a;
+	a = 020 << 3  ;
+//convert octal to decimal so, 020=32*3^2=>32*9=128
+	printf("a = %d\n",a);			
+	return 0;
+}
+
+Answers:2
+1. 60
+2. 128
+3. 12
+4. 2
+
+35. Find the output of the following:
+void fun_enum(DEPARTMENT d)
+{
+    printf("%d",d);
+}
+int main()
+{
+    typedef enum {TCT,ADMN,MRKT,SAN}DEPARTMENT;
+    fun_enum(SAN);
+    return 0;
+}
+
+Answers:4
+1. 0
+2. 1
+3. Garbage
+4. Compile Time Error
+
+36. #include <stdio.h>
+struct course
+{
+	char *c;
+
+};
+int main()
+{
+	struct course c;
+	struct course *s = &c;
+	(*s).c = "PreCat";
+	printf("%s", c.c);
+	return 0;
+}
+Answers:3
+1. Compile time error
+2. Run time error
+3. PreCat
+4. None of the above
+
+37. Find the output of the following:	
+int main()
+{
+    char c1='1' , c2 = '2',c3;
+    c3 = 48 != c1 < c2 && c2++;
+    printf("%c",c3+48);
+    return 0;
+}
+Answers:1
+1. 50
+2. 0
+3. 1
+4. 51
+
+38. Find the output of the following:
+int main()
+{
+    signed int x = -10;
+    unsigned int y = 10,z;
+    y = y >> 2;
+    z = y > x ? !y : ~x ;
+    printf("%u",z);
+    return 0;
+}
+
+Answers:4
+1. 4294967285
+2. 10
+3. -10
+4. 9
+
+39. Find the correct statement from the following:
+fread can not read multiple records in one array in single call
+Answers:1
+1. fread function can read only binary data from the file.
+2. fread function can read text / binary data from file.
+3. fread can not be used to read 1 byte at a time.
+4. fread can not be used to read 1 byte at a time.
+
+40. What is the value of argc when command line arguments are ./a.out 11 22
+
+Answers:4
+1. 0
+2. 1
+3. 2
+4. 3
+
+41. ELT stands for
+Answers:2
+1. extract, load, and transfer
+2. extract, load, and transform
+3. effect, load and transfer
+4. effect, load and transform
+
+42. ________ is a transactional pattern commonly used in programming and represents the four basic operations of persistent storage in a database.
+Answers:3
+1. ACID
+2. CUAD
+3. CRUD
+4. REST
+
+43. A _________________ describes how data is managed from collection through to transformation, distribution, and consumption.
+Answers:3
+1. data policies
+2. data cleaning
+3. data architecture
+4. data Availability
+
+44. ____________ is the percentage of time an IT service or component is in an operable state.
+Answers:4
+1. Scalability
+2. Elasticity
+3. Probability
+4. Availability
+
+45. Which of the following comes under V’s  of bigdata?
+Answers:2
+1. Votile
+2. Value
+3. Vast
+4. Vibrant
+
+46. Machine learning is
+Answers:2
+1. An algorithm that can learn
+2. A sub-discipline of computer science that deals with the design and implementation of learning algorithms
+3. An approach that abstracts from the actual strategy of an individual algorithm and can therefore be applied to any other form of machine learning.
+4. None of these
+
+47. Prediction is
+
+Answers:1
+1. The result of the application of a theory or a rule in a specific case
+2. One of several possible enters within a database table that is chosen by the designer as the primary means of accessing the data in the table.
+3. Discipline in statistics that studies ways to find the most interesting projections of multi-dimensional spaces.
+4. None of these
+
+48. Which of the following is an example of an unsupervised learning problem?
+Answers:2
+1. Predicting the stock market
+2. Recommending products to users
+3. Spam filtering
+4. Sentiment analysis
+
+49. Which of the following is a component of Artificial Intelligence?
+Answers : 2
+1. Training
+2. Learning
+3. Designing
+4. Coding
+
+Answers:2
+1. Training
+2. Learning
+3. Designing
+4. Coding
+
+
+50. The term __________ refers to Grasps the relationship between the elements present in data. To
+perform this task, you need tools taken from statistics, such as correlations,
+
+Answers: 4
+1. Cleansing
+2. Inspecting
+3. Transforming
+4. Modelling

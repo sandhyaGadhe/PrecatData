@@ -1,0 +1,65 @@
+#include <stdio.h>
+int main( void )
+{
+int x = 4, y = 0 ;
+while ( x >= 0 )
+{
+if ( x == y )
+break;
+else
+printf ("%d %d ", x, y ) ;
+x--;
+y++;
+if( x==0)
+continue;
+}
+printf("-1");
+/*
+    x = 4 y = 0 
+    while ( x >= 0 )
+    {
+    if ( x == y ) // if ( 4 == 0 ) => false 
+    break; // skipped 
+    else
+    printf ("%d %d ", x, y ) ;// 4 0 is printed 
+    x--; //x is post-decremented to 3 
+    y++;// y is post-incrmented to 1 
+    if( x==0) // if(3==0) => false 
+    continue;
+    }
+    printf("-1");
+
+
+    in next iteration x = 3 y = 1 
+    while ( x >= 0 )
+    {
+    if ( x == y ) // if ( 3 == 1 ) => False
+    break; // skipped 
+    else
+    printf ("%d %d ", x, y ) ;// 3 1 is printed 
+    x--; //x is post-decremented to 2 
+    y++;// y is post-incrmented to 2 
+    if( x==0) // if(2==0) => false 
+    continue;
+    }
+    printf("-1");
+
+    in next iteration x = 2 y = 2 
+    while ( x >= 0 )
+    {
+    if ( x == y ) // if ( 2 == 2 ) =>True
+    break; // control comes outside the while loop 
+    else
+     printf ("%d %d ", x, y ) ;
+     x--; 
+     y++;
+    if( x==0)
+    continue;
+    }
+    //control comes here 
+    printf("-1"); // prints -1 on terminal 
+
+
+*/
+return 0;
+}

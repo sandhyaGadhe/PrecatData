@@ -1,0 +1,74 @@
+1. Which of the following is a false statement about swap memory?
+Answers(1)
+1. it is a portion of main memory
+2. it is a portion of disk memory
+3. it is also called as a virtual memory
+4. size of swap memory should be doubles the size of main memory
+
+
+2. _____  in a filesystem contains metadata i.e. information about other sectors.
+Answers(2)
+1. Boot Block
+2. Master File Table
+3. Super Block
+4. Data Block
+5. None of the above
+
+3. What are file extensions?
+Answers(2)
+1. Log files
+2. Output types for file formats
+3. Software programs
+4. All of the above
+
+4. If any process spends more time on paging rather than execution, then this high-paging activity is referred to.
+Answers(1)
+1. Thrashing
+2. Scratching
+3. Fragmentation
+4. Swapping
+
+5. Which of the following is not a disk space allocation method?
+Answers(3)
+1. Linked List allocation
+2. Contiguos allocation
+3. Vector allocation
+4. Index allocation
+
+6. Which of the following memory allocation scheme is an efficient one?(3)
+Answers
+1. Best fit
+2. Worst fit
+3. First fit
+4. None of the above
+
+7. In which one of the following page replacement algorithms it is possible for the page fault rate to increase even when the number of allocated frames increases?
+Answers(3)
+1. LRU
+2. OPT
+3. FIFO
+4. MFU
+
+8. In paging, physical memory is divided into fixed size of blocks called as ______.
+Answers(2)
+1. pages
+2. frames
+3. parititions
+4. all of the above
+
+9. Which of the following is the best solution on external fragmentation problem?
+Answers(3)
+1. Compaction
+2. Segmentation
+3. Paging
+4. All of the above
+5. None of the above
+
+10. Which of the following problem is not occurs in paging?
+Answers(3)
+1. Internal fragmentation
+2. Process size limit
+3. External fragmentation
+4. None of the above
+
+

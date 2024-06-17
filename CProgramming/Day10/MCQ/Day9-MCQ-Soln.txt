@@ -1,0 +1,32 @@
+#include <stdio.h>
+int function(int, int);
+int main(void)
+{
+    int i = 10, j = 20;
+    printf("before fun call :: i=%d j=%d \n", i, j);
+    //                                       10,20    
+    i = i + j; // i = 10 + 20 => 30 ( now i is updated to 30) 
+    j = i - j; // j = 30 - 20 => 10 ( now j is updated to 10) 
+    i = i - j; // i = 30 - 10 => 20 ( now i is updated to 20) 
+    //now i = 20 j = 10 
+    function(i, j); //fn call =>  20 , 10 is passed to the function
+    // control comes back from the calling function by value but value is not catched  
+    
+    // i and j is referred from main's i and j 
+    //now i = 20 j = 10 
+    i = i + j; // 20 + 10 => 30 ( now i is updated to 30) 
+    j = i - j; // 30 - 10 => 20 ( now j is updated to 20) 
+    i = i - j; // 30 - 20 => 10 ( now i is updated to 10) 
+    
+    printf(" after fun call :: i=%d j=%d \n", i, j);// 10 20 
+    return 0;
+}
+// i = 20 j = 10 
+int function(int i,int j)
+{
+i=i+j; // i = 20 + 10 => 30 ( i updated to 30)
+j=i-j; // j = 30 - 10 => 20 ( j updated to 20)
+i=i-j; // i = 30 - 20 => 10 ( i updated to 10)
+printf("after fun call :: i=%d j=%d \n", i, j); // 10 20 
+return ++i, ++j; // rightmost value is returned ++j=> ++20=>21 is returned 
+}

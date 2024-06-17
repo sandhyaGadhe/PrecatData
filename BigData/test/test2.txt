@@ -1,0 +1,69 @@
+1. Which is not in one of the V’s of Big Data____________
+Answers : 3 (velocity,varity,volume,value,varacity)
+1. variety
+2. Velocity
+3. Volatile
+4. volume
+
+2. What is one of the main characteristics of Big Data processing?
+Answers : 3
+1. Centralized storage of data in a Data Warehouse
+2. Centralized data processing
+3. Distributed collection and computing of data
+4. Collection of information through highly optimized computer systems
+
+3. ___________ means dividing data in logical parts to improve performance.
+Answers : 2
+1. Normalizing
+2. Partitioning
+3. Scrubbing
+4. Extracting
+
+4. HDFS  stands for _____________.
+Answers : 2
+1. Hive Distributed File System
+2. Hadoop Distributed File System
+3. Hadoop Direct File System
+4. Hive de-normalized File System
+
+5. Identify the correct option which defines DataMart?
+Answers : 1
+1. part of data warehouse
+2. another type of data warehouse
+3. not related to data warehouse
+4. type of data lake
+
+6. ___________ is Processing finite set of data.
+Answers : 3
+1. Stream processing
+2. String processing
+3. Batch processing
+4. Bash processing
+
+7. Big data analysis does the following except?
+Answers : 2
+1. Collects data
+2. Spreads data
+3. Organizes data
+4. Analyzes data
+
+8. Which of the following are incorrect Big Data Technologies?
+Answers : 4
+1. Hadoop
+2. Spark
+3. Hive
+4. Cron
+
+9. What format of data can be stored in data lake?
+Answers : 1
+1. Structured, Unstructured and Semi-Structured data
+2. Only Structured data
+3. Only Unstructured and Semi-Structured data
+4. Only Unstructured data
+
+10. Which of the programming language is not used for big data processing?
+Answers : 4
+1. Java
+2. Scala
+3. Python
+4. Visual Basic

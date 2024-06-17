@@ -1,0 +1,144 @@
+1. _____________ is the process of coordinating many jobs to run as quickly and efficiently as possible on a scheduled cadence.
+Answers : 2
+1. Data mining
+2. Orchestration
+3. Data Architecture
+4. Data Management
+
+2. Which of the following are not the Types of data in big-data?
+Answers: 4
+1. Structured
+2. unstructured
+3. Semi-structured
+4. primary data
+
+3. ______ is a framework that works with a variety of related tools used in bigData.
+Answers:2
+1. Madoop
+2. Hadoop
+3. Mapper
+4. Applet
+
+4. Which of the following is not a characteristics of big data?
+Answers:2
+1. Volume
+2. Virtuality
+3. Velocity
+4. Variety
+
+5. In __________________  stage of the data engineering lifecycle which includes process of importing large, assorted data files from multiple sources into a single, cloud-based storage medium
+Answers:4
+1. Data Storage
+2. Data transformation
+3. Data security
+4. Data ingestion
+
+6. OLTP stand for?
+Answers:3
+1. online transfer processing
+2. offline transaction processing
+3. online transaction processing
+4. offline transformation processing 
+
+7. A ___________ is a centralized repository designed to store, process, and secure large amounts of structured, semi structured, and unstructured data.
+Answers:1
+1. data lake
+2. data lands
+3. data ponds
+4. databricks
+
+8. Which of the following is not characteristics of data systems?
+Answers:3
+1. Scalability
+2. Elasticity
+3. Probability
+4. Availability
+
+9. ______________ architecture comprises separate, decentralized, and loosely coupled services. Each service has a specific function and is decoupled from other services operating within its domain.
+Answers:2
+1. Mini
+2. Microservices
+3. Monolith
+4. Monotonous
+
+10. Which of the following is true about big data?
+I - Big data refers to datasets that are in terabytes or more.
+II - Big data can be processed using traditional techniques.
+III - Big data working only in case of low velocity.
+IV - Variety is not a characteristics of big data.
+
+Answers:1
+1. I
+2. I,II
+3. II,Iv
+4. II,III
+
+11. Which of the following is not example of NoSQL?
+Answers:4
+1. cassendra
+2. mongoDB
+3. Redis
+4. MySQL
+
+12. Big data analysis does the following except ----------------- check
+Answers:1
+1. Spreads data
+2. Organizes data
+3. Analyse data
+4. Collect data
+
+13. Which of the following is not Big Data Technologies?
+Answers:4
+1. Apache Hadoop
+2. Apache Spark
+3. Apache Kafka
+4. Apache Pytorch
+
+14. Data in ___________ bytes size is called Big Data.
+Answers:3
+1. Mega
+2. Giga
+3. Peta
+4. Meta
+
+15. Which of the primary objective of data visualization ?
+answer:3
+1. To make data visually appealing.
+2. To summarize data using statistical measure.
+3. To communicate insights and patterns in data.
+4. To transform unstructured data into structured
+
+16. JSON format data is comes under ______________ data.
+Answers:2
+1. structured
+2. semi-structured
+3. wide-structured
+4. unstructured
+
+17. What is primary use of data warehouse?
+Answers:1
+1. OLAP
+2. OLTP
+3. OLPP
+4. OLSP
+
+18. which of the following is not a categories of  SQL commands ?
+Answers:3
+1. DDL
+2. DQL
+3. DTL
+4. DCL
+
+19. ______ Database is a non-relational Data Management System, that does not require a fixed schema.
+Answers:4
+1. mySQL
+2. OnSQL
+3. NowSQL
+4. NoSQL
+
+20. Which of the programming language is not used for big data processing?
+Answers:4
+1. Python
+2. Java
+3. C++
+4. Mongo

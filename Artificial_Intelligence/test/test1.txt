@@ -1,0 +1,82 @@
+1. Which are types of Machine learning?
+I-Semi-structured learning
+II-Supervised learning
+III-Structured learning
+IV-Unsupervised learning
+V-Reinforcement learning
+
+Answers : 2
+1. I,III,V
+2. II,IV,V
+3. II,III
+4. I,V
+
+
+2. Which system in AI is used by understand and converse with humans through voice command ?
+Answers : 4
+1. Siri
+2. Alexa
+3. Cortana
+4. All above
+
+3. Which of the following are the application of AI?
+I-Data Security
+II-Gaming
+III-Social Media
+IV-Automotive Industry
+V-Robotics
+
+Answers : 4
+1. I,III,V
+2. II,IV
+3. I,III,IV,V
+4. I,II,III,IV,V
+
+4. What is the difference between supervised and unsupervised learning?
+Answers :1
+1. Supervised learning requires labelled data while unsupervised learning does not.
+2. Unsupervised learning requires labelled data while supervised learning does not.
+3. Supervised learning does not require data while unsupervised learning does.
+4. There is no difference between supervised a
+
+5. Artificial Intelligence is about_____.
+Answers : 4
+1. Programming on Machine with your Own Intelligence
+2. Playing a game on Computer
+3. Putting your intelligence in Machine
+4. Making a machine Intelligent
+
+6. What is machine translation?
+Answer: 2
+1. Converting a human language to another
+2. Converting a human language to machine language
+3. Converting any human language to English
+4. Converting Opcode to machine language
+
+7. What is the definition of data science?
+Answers : 1
+1. The study of collecting and analysing data
+2. The study of designing databases
+3. The study of computer hardware
+4. The study of data encryption techniques
+
+8. Machine learning is a subset of which of the following.
+Answers: 3
+1. Deep learning
+2. Data learning
+3. Artificial Intelligence
+4. Advance computing
+
+9. Which of the following is an example of a unsupervised learning problem?
+Answers : 3
+1. Population growth prediction
+2. Market forecasting
+3. Market basket analysis
+4. Stock prediction
+
+10. The term "artificial intelligence" was coined
+Answers : 2
+1. Yann LeCun
+2. John McCarthy
+3. Seyedali Mirjalili
+4. Dr Pushpak Bhattacharya

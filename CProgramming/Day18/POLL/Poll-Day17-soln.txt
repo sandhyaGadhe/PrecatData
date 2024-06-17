@@ -1,0 +1,91 @@
+// #include <stdio.h>
+// typedef struct time
+// {
+//     short int hr;
+//     short int min;
+//     short int sec;
+// } TIME;
+// typedef struct date
+// {
+//     short int dd;
+//     short int mm;
+//     short int yy;
+//     TIME t;
+// } DATE;
+
+// int main(void)
+// {
+//     DATE d1 = {16, 8, 2023, 9, 0, 0};
+//     const struct date d2 = d1;
+
+//     printf("date %d-%d-%d @ %d:%d:%d am\n", d2.dd, d2.mm, d2.yy,d1.t.hr,d1.t.min,d1.t.sec );
+
+//     return 0;
+// }
+
+// *******************************************************
+
+// #include <stdio.h>
+// struct demo
+// {
+//     signed d1 : 2;   // 2 bits
+//     unsigned d2 : 3; // 3 bits
+//     signed d3 : 4;   // 4 bits
+// };
+// /*
+//         d1 => 2 bits
+//         (2 to the power 2 - 1) - 1
+//         (2 to the power 1) - 1
+//          2 - 1
+//          1
+//          max range =>1
+//          min range =>-2
+
+//          d2 => 3 bits  ( unsigned )
+//          (2 to the power 3) - 1
+//           8 - 1
+//           7 => max range
+//           0 => min range
+
+//         d3 => 4 bits
+//         (2 to the power 4 - 1 ) - 1
+//         (2 to the power 3 ) - 1
+//                7 => max range
+//                -8 => min range
+// */
+// int main(void)
+// {
+//     struct demo ds;
+//     // ds.d1 = 1; // prints 1
+//     // ds.d2 = 3; // prints 3
+//     // ds.d3 = 9;//  prints -7 ( cycle concept )
+//     // //printf("%d %d %d", ds.d1, ds.d2, ds.d3);
+//     //  ds.d1 = 2; // prints -2 ( cycle concept )
+//     //  ds.d2 = 7; // OK prints 7
+//     //  ds.d3 = 10; // prints -6 ( cycle concept )
+//     //  printf(" %d %d %d", ds.d1, ds.d2, ds.d3);
+
+//     return 0;
+// }
+
+// *********************************************************************
+
+// #include <stdio.h>
+// #pragma pack(1) 
+// typedef struct demo
+// {
+//     unsigned bit1 : 1; //1 bit 
+//     signed bit2 : 2; // 2 bit 
+//     signed bit3 : 3; // 3 bit 
+//     unsigned bit4 : 2; // 2 bit 
+    
+// } DEMO;
+// // 1 + 2 + 3 + 2  => 8 bits => (8 bits from 32 bits i.e 4 bytes )
+// // so size is 4 bytes 
+// int main(void)
+// {
+//     DEMO d1;
+//     struct demo d2;
+//     printf("\n %d %d", sizeof(d1), sizeof(d2)); // 4 4 
+//     return 0;
+// }

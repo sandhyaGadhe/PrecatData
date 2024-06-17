@@ -1,0 +1,338 @@
+// #include<stdio.h>
+// int main(void)
+// {
+// printf(" SunBeam ");
+// if((printf("SunBeam")-7))
+// main();
+// else
+// printf(" SunBeam ");
+// return 0;
+// }
+// /*
+// int main(void)
+// {
+// printf(" SunBeam "); // prints SunBeam
+// if((printf("SunBeam")-7)) // if(7-7)=>if(0)=>if(False)( but prints SunBeam)
+// main(); //skipped
+// else
+// printf(" SunBeam "); //executed => prints SunBeam
+// return 0;
+// }
+
+// */
+
+// #include <stdio.h>
+// static int num = 9;
+// int main(void)
+// {
+//     if (num < 0 - 2)
+//         return 0;
+//     else if (num % 2 == 1)
+//     {
+//         printf("%3d,", num -= 1);
+//         printf("%d\n",num);
+//         --num;
+//     }
+//     else
+//     {
+//         printf("%3d,", num -= 2);
+
+//     }
+//     main();
+//     return 0;
+// }
+// /*
+// static int num = 9; => File scope ( static will get memory once)
+// int main(void)
+// {
+//     if (num < 0 - 2) // if(9<-2)=> false
+//         return 0;// skipped
+//     else if (num % 2 == 1) // if(9%2==1)=>if(T)
+//     {
+//         printf("%3d,", num -= 1);// num = num - 1 => 9 - 1 => prints 8
+//         --num; // 8 is decremented to 7
+//     }
+//     else // skipped
+//     {
+//         printf("%3d,", num -= 2);
+//     }
+//     main(); // recursive call is given
+//     return 0;
+// }
+
+// // now num is 7
+// int main(void)
+// {
+//     if (num < 0 - 2) // if(7<-2)=> false
+//         return 0;// skipped
+//     else if (num % 2 == 1) // if(7%2==1)=>if(T)
+//     {
+//         printf("%3d,", num -= 1);// num = num - 1 => 7 - 1 => prints 6
+//         --num; // 6 is decremented to 5
+//     }
+//     else // skipped
+//     {
+//         printf("%3d,", num -= 2);
+//     }
+//     main(); // recursive call is given
+//     return 0;
+// }
+
+// // now num is 5
+// int main(void)
+// {
+//     if (num < 0 - 2) // if(5<-2)=> false
+//         return 0;// skipped
+//     else if (num % 2 == 1) // if(5%2==1)=>if(T)
+//     {
+//         printf("%3d,", num -= 1);// num = num - 1 => 5 - 1 => prints 4
+//         --num; // 4 is decremented to 3
+//     }
+//     else // skipped
+//     {
+//         printf("%3d,", num -= 2);
+//     }
+//     main(); // recursive call is given
+//     return 0;
+// }
+
+// // now num is 3
+// int main(void)
+// {
+//     if (num < 0 - 2) // if(3<-2)=> false
+//         return 0;// skipped
+//     else if (num % 2 == 1) // if(3%2==1)=>if(T)
+//     {
+//         printf("%3d,", num -= 1);// num = num - 1 => 3 - 1 => prints 2
+//         --num; // 2 is decremented to 1
+//     }
+//     else // skipped
+//     {
+//         printf("%3d,", num -= 2);
+//     }
+//     main(); // recursive call is given
+//     return 0;
+// }
+
+// // now num is 1
+// int main(void)
+// {
+//     if (num < 0 - 2) // if(1<-2)=> false
+//         return 0;// skipped
+//     else if (num % 2 == 1) // if(1%2==1)=>if(T)
+//     {
+//         printf("%3d,", num -= 1);// num = num - 1 => 1 - 1 => prints 0
+//         --num; // 0 is decremented to -1
+//     }
+//     else // skipped
+//     {
+//         printf("%3d,", num -= 2);
+//     }
+//     main(); // recursive call is given
+//     return 0;
+// }
+
+// // now num is -1
+// int main(void)
+// {
+//     if (num < 0 - 2) // if(-1<-2)=> false
+//         return 0;// skipped
+//     else if (num % 2 == 1) // if(-1%2==1)=>if(-1==1)=>if(False)
+//     {
+//         //skipped
+//         printf("%3d,", num -= 1);
+//         --num;
+//     }
+//     else // executed
+//     {
+//         printf("%3d,", num -= 2); // num = num - 2 => -1 - 2 => -3 is printed
+//     }
+//     main(); // recursive call is given
+//     return 0;
+// }
+
+// // now num is -3
+// int main(void)
+// {
+//     if (num < 0 - 2) // if(-3<-2)=>True
+//         return 0;// control goes back to calling function deleting each activation record
+//     //skipped
+//     else if (num % 2 == 1)
+//     {
+//         printf("%3d,", num -= 1);
+//         --num;
+//     }
+//     else
+//     {
+//         printf("%3d,", num -= 2);
+//     }
+//     main();
+//     return 0;
+// }
+
+// */
+
+// #include <stdio.h>
+// int x = 4;
+// int main(void)
+// {
+//     int i;
+//     for (i = 0; i < x; i++)
+//     {
+//         static int y = 0;
+//         printf("\n x=%d , y=%d \t", x++, y++);
+//         if (i < x)
+//             continue;
+//         else
+//             break;
+//     }
+//     return 0;
+// }
+
+// /*
+// #include <stdio.h>
+// int x = 4;
+// int main(void)
+// {
+//     int i;
+//     for (i = 0; i < x; i++) // 0<4 => T ( first iteration )
+//     {
+//         static int y = 0;
+//         printf("\n x=%d , y=%d \t", x++, y++);
+//         //                          4  , 0 ( post incrm to 5 1 )
+//         if (i < x) // if(0<5)
+//             continue; // control goes to the loop again
+//         else
+//             break;
+//     }
+//     *******************************
+
+//     for (i = 0; i < x; i++) // 1<5 => T ( i incrmented to 1) ( x is 5)
+//     {
+//         static int y = 0;
+//         printf("\n x=%d , y=%d \t", x++, y++); // y is 1 ( static)
+//         //                          5  , 1 ( post incrm to 6 2 )
+//         if (i < x) // if(1<6)
+//             continue; // control goes to the loop again
+//         else
+//             break;
+//     }
+
+//     ****************************************
+//      for (i = 0; i < x; i++) // 1<5 => T ( i incrmented to 2) ( x is 6)
+//     {
+//         static int y = 0;
+//         printf("\n x=%d , y=%d \t", x++, y++); // y is 2 ( static)
+//         //                          6  , 2 ( post incrm to 6 3 )
+//         if (i < x) // if(2<6)
+//             continue; // control goes to the loop again
+//         else
+//             break;
+//     }
+
+//     // infinte loop
+
+// */
+
+// #include <stdio.h>
+// int function(int val2)
+// {
+//     int val1;
+//     for (val1 = 1; val1 <= val2 || val1 <= val2 / 2; val1 = val1 << 2)
+//         printf("%5d", val1);
+//     return 0;
+// }
+// int var = 259;
+// int main(void)
+// {
+//     extern int var;
+//     printf(" var = %d", function(++var)); //260 is passed 
+//     return 0;
+// }
+// /*
+
+// //val2 = 260
+// int function(int val2)
+// {
+//     int val1;
+//     for (val1 = 1; val1 <= val2   || val1 <= val2 / 2; val1 = val1 << 2)
+//     //    once   ; (val1 <= val2) || val1 <= (val2 / 2) ; val1 = val1<<2
+//     //             ( 1 <= 260 )   ||  Skipped ;
+//     //                  True
+//         printf("%5d", val1); // 1 is printed in first iteration
+
+//     *********************************************************
+//                             // val1 is 1
+//                             // val1<<2 => multiply by 2 to the power n
+//                                        =>  1 * 2 to the power 2 => 4
+//      //val1 is 4 now
+//      for (val1 = 1; val1 <= val2   || val1 <= val2 / 2; val1 = val1 << 2)
+//     //    once   ; (val1 <= val2) || val1 <= (val2 / 2) ; val1 = val1<<2
+//     //             ( 4 <= 260 )   ||  Skipped ;
+//     //                  True
+//         printf("%5d", val1); // 4 is printed in second iteration
+
+//     ********************************************************************
+//                             // val1 is 4 now
+//                             // val1<<2 => multiply by 2 to the power n
+//                                        =>  4 * 2 to the power 2 => 16
+//      //val1 is 16 now
+//      for (val1 = 1; val1 <= val2   || val1 <= val2 / 2; val1 = val1 << 2)
+//     //    once   ; (val1 <= val2) || val1 <= (val2 / 2) ; val1 = val1<<2
+//     //             ( 16 <= 260 )   ||  Skipped ;
+//     //                  True
+//         printf("%5d", val1); // 16 is printed in Third iteration
+
+//      ********************************************************************
+//                             // val1 is 16 now
+//                             // val1<<2 => multiply by 2 to the power n
+//                                        =>  16 * 2 to the power 2 => 64
+//      //val1 is 64 now
+//      for (val1 = 1; val1 <= val2   || val1 <= val2 / 2; val1 = val1 << 2)
+//     //    once   ; (val1 <= val2) || val1 <= (val2 / 2) ; val1 = val1<<2
+//     //             ( 64<= 260 )   ||  Skipped ;
+//     //                  True
+//         printf("%5d", val1); // 64 is printed in fourth iteration
+
+
+//      ********************************************************************
+//                             // val1 is 64 now
+//                             // val1<<2 => multiply by 2 to the power n
+//                                        =>  64 * 2 to the power 2 => 256
+//      //val1 is 64 now
+//      for (val1 = 1; val1 <= val2   || val1 <= val2 / 2; val1 = val1 << 2)
+//     //    once   ; (val1 <= val2) || val1 <= (val2 / 2) ; val1 = val1<<2
+//     //             ( 256 <= 260 )   ||  Skipped ;
+//     //                  True
+//         printf("%5d", val1); // 256 is printed in fifth iteration
+
+//      ********************************************************************
+
+//                             // val1 is 256 now
+//                             // val1<<2 => multiply by 2 to the power n
+//                                        =>  256 * 2 to the power 2 => 1024
+//      //val1 is 1024 now
+//      for (val1 = 1; val1 <= val2   || val1 <= val2 / 2; val1 = val1 << 2)
+//     //    once   ; (val1 <= val2)  || val1 <= (val2 / 2) ; val1 = val1<<2
+//     //             ( 1024 <= 260 ) ||   ;
+//     //                  False
+//     //                             ||  1024 <= (260/2)
+//                                    ||  1024 <= (130)
+//                                    ||   False
+//     //                          False
+//         printf("%5d", val1); // skipped
+
+//     return 0; // control comes here 0 value is returned to calling function
+//               // 0 is returned to main( )
+// }
+// int var = 259;
+// int main(void)
+// {
+//     extern int var;
+//     printf(" var = %d", function(++var));// 259=>260(260 is passed) to the function
+//     //       prints 0  as 0 is returned from the function
+//     return 0;
+// }
+
+// */
+

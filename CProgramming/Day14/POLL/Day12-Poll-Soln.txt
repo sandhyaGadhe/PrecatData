@@ -1,0 +1,141 @@
+// #include <stdio.h>
+// void function_Array(int *const a)
+// {
+//     printf("%8d", a[a[0]]);
+//     //            a[4] => 25
+
+//     printf("%8d", a[a[1 - 1]]);
+//     //            a[a[0]]
+//     //            a[4] = > 25
+
+//     printf("%8d", a[a[1 * 0]]); // 25
+//     printf("%8d", a[a[0 / 1]]);// 25
+//     return;
+// }
+// int main(void)
+// {
+//     const int arr[5] = {5 - 3 * 0 - 1, 10, 15, 20, 25};
+//     //                      4 , 10 , 15 , 20 , 25
+//     //                     [0]  [1]  [2]  [3]  [4]
+//     function_Array(arr); // name of array base address is passed
+//     return 0;
+// }
+
+// *******************************************************************
+
+// #include <stdio.h>
+// void function_array(int a[], int size)
+// {
+//     // arr[2] is 28
+//     ++2 [a]; // 2[a] is same as a[2]
+//     // ++a[2] => 28 updated to 29
+
+//     printf(" %d ", -++2 [a]); // - 30 is printed
+//     //      ++2[a] updated 29 to 30
+//     return;
+// }
+
+// int main( void )
+// {
+// int arr[4]={10,20,30,40};
+// /*
+//         10   20   30   40
+//         [0]  [1]  [2]  [3]
+//         100  104  108  112
+
+// */
+// --2[arr];// --2[arr] => --arr[2] => 30 is changed to 29
+// // arr[2] is updated to 29
+// printf(" %d ",- --2[arr]); //--2[arr] => arr[2] => 29 is updated to 28
+// //            -28
+// // arr[2] is updated to 28
+//   function_array(arr, 4); // base address is passed , 4
+// return 0;
+// }
+
+// ******************************************************************
+
+#include <stdio.h>
+//64 bit compiler => pointer size => 8 bytes 
+void print(double a[])
+{
+int n=sizeof(a)/sizeof(*a)+sizeof(&a)-(a[7] /1.1f);
+//          8  /  8  + 8  - (8.8 /1.1f)
+//          8  /  8  + 8  - (8.00)
+//          1  + 8  - (8.00)
+//          1  + 8  - (8.00)
+//             9 - 8.00 
+//              1.00 
+//int n = 1;  
+
+int i;
+
+for (i = 0; i < n; i++) // loop will iterate 1 time 
+printf(" %.1lf ", a[i]);
+
+return;
+}
+ 
+int main( void )
+{
+double arr[] = {1.1,2.2,3.3,4.4,5.5,6.6,7.7,8.8} ;
+print(arr);
+return 0;
+}
+
+************************************************************
+
+// pointer size is 8 bytes
+// #include<stdio.h>
+// float function_array(const double *ptr)
+// {
+// //printf("%d %d\n",sizeof(*ptr), sizeof(ptr[1])) ; // 8 8
+// return (float)(sizeof(*ptr)+1)/(sizeof(ptr[1]));
+// //     (8+1)/(8);
+// //      9  / 8
+// //       1.125
+
+// }
+// int main( void )
+// {
+// double arr[]={1.2 , 2.3 , 3.4 , 4.5 , 5.6};
+// float size=(float)(sizeof(arr)+1)/(sizeof(arr[1]));
+// //                    (float)41         /    8  => (float) / (int) => float
+// //                          5.125
+
+// printf("%.4f %.4f",size, function_array(arr)); // name of array => base address
+// //                 5.125 , 1.125
+// return 0;
+// }
+
+****************************************************************************************
+
+// #include <stdio.h>
+// void abc(int arr[])
+// {
+//     printf("%c", *++arr + ' '); // f is printed 
+//     /*
+//                 *++arr + ' '
+//                  ++arr pointer moves from 65 to 70
+//                *++arr => 70 
+//                 70 + 32 ( ascii value of space is 32)  
+//                 102 ( ascii value of f  )       
+//     */
+//     printf("%c", *arr++ + ' '); //f is printed 
+//     //          *arr++ + ' ' 
+//     // arr is pointer pointing to arr[1] i.e 70 
+//     // *arr is 70 
+//     //  70 + 32 = > 102 ( prints again f )
+//     // on next line arr++ will take pointer to next location 
+//     return;
+// }
+// int main()
+// {
+//     int arr[10];
+//     arr[0] = 0101; //65
+//     arr[1] = 0106; //70 
+//     arr[2] = 0113; //75
+//     arr[3] = 0125; //85 
+//     abc(arr); // name of array is base address is passed 
+//     return 0;
+// }

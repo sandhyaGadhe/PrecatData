@@ -1,0 +1,93 @@
+// #include <stdio.h>
+// float calculate(float *const ptr_floater1, float const *ptr_floater2)
+// {
+//     // *ptr_floater1 = 0.001;
+//     //  *ptr_floater2 = 0.003;
+
+//     float result;
+//     *ptr_floater1 = 2 * *ptr_floater1;
+//     //              2 *  0.001
+//     //               0.002
+//     // *ptr_floater1 => 0.002 (floater1 variable is updated to 0.002)
+
+//     result = 3 * (*ptr_floater2 - *ptr_floater1);
+//     //       3 * (0.003 -  0.002 )
+//     //       3 * 0.001
+//     //        0.003
+
+//     return result, result + 1, result / 3;
+//     //                         0.003 / 3 =>0.001 is returned to the calling function
+// }
+// int main(void)
+// {
+//     float floater1 = 0.001, floater2 = 0.003;
+//     printf("\n %.3f", 3 * calculate(&floater1, &floater2) / 3);
+//     //                3 * 0.001 / 3
+//     //                  0.001
+//     return 0;
+// }
+
+// #include <stdio.h>
+// int *fun1(int value) // value = 10
+// {
+//     static int a; // default value is 0
+//     value++; // value 10 => 11
+//     value = a; // a is copied into value ( 0 is copied into value )
+//     a++; // a is incrmented to 1
+//     return &a; // address of a is returned
+//     // a is static variable ( static variable is destroyed after execution of main )
+// }
+// int main(void)
+// {
+//     int a = 10;
+//     int *const val = fun1(a);// 10 value is passed
+//     // const is written after * so pointer is constant
+
+//     //address of static variable is returned to pointer val
+//     printf(" value= %d", *val); // it will print 1
+//     return 0;
+// }
+
+// #include <stdio.h>
+// int x = 10;
+// void callbyaddress(const int *ptr_x) // *ptr_x => 100
+// {
+//     x = *ptr_x * *ptr_x / x;
+//     //    100  *  100 / 10
+//     //        1000
+//   // global variable is updated to 1000
+// }
+// int main(void)
+// {
+//     const int x = 100;
+//     printf(" x = %d ", x); //100 is printed
+//     callbyaddress(&x);
+//     printf(" x = %d", x); // 100 is printed
+//     // local variable will get the priority
+//     return 0;
+// }
+
+// #include <stdio.h>
+// void fun1(void *p1) // address of num1 is catched 
+// {
+//     // *p1 => 68 
+//     printf("%c-", --*(int *)p1);
+//     //             68 => --68 => 67  ( ascii value of C)  
+// }
+// void fun2(void *p2) // address of ch is catched 
+// {
+//     // *p2 = > 100 
+//     printf("%c", --*(char *)p2);
+//     //            -100 => 99 ( c )  
+// }
+// int main(void)
+// {
+//     int num1 = 2 * (6 * 6) - 2 * 2; // 68 
+//     char ch = num1 + ' '; // ( ascii value of space is 32)
+//     //         68 + 32 => 100  
+//     void *ptr_num1 = &num1; // address of num1 is stored inside ptr_num1 
+//     fun1(ptr_num1); // ptr_num1 is passed ( address of num1 is passed )
+//     ptr_num1 = &ch; 
+//     fun2(ptr_num1);// ptr_num1 is passed i.e &ch is passed 
+//     return 0;
+// }

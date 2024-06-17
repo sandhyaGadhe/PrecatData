@@ -1,0 +1,431 @@
+// #include <stdio.h>
+// int main(void)
+// {
+// int loop=3;
+// loop--; //post decrement
+// // value of loop variable is 2
+// do
+// {
+// printf(" Sun");// prints
+// }while(printf("Beam%d", loop) && loop--);
+// /*
+// //  post decrement associate first and then decrement
+//     while(printf("Beam%d", loop) && loop--); // prints SunBeam2
+//                     5            && 2  ( in next iteration it becomes 1 )
+//     while(printf("Beam%d", loop) && loop--); // prints SunBeam1
+//                     5            && 1  
+//     while(printf("Beam%d", loop) && loop--); // prints SunBeam0
+//                     5            &&  0  => condition becomes false
+//     control comes out of do-while loop
+//     so total 3 iterations will print
+
+//     SunBeam2 SunBeam1 SunBeam0
+// */
+// return 0;
+// }
+
+// #include <stdio.h>
+// int main(void)
+// {
+// int a = 010, num = 0;
+// while (num <= ~(~a))  // num <= a
+// {
+// printf("%d ", num++);
+// if (num % 2)
+// num++;
+// }
+// printf("\n outside the loop : %d ",num);
+// 
+
+
+/*
+// ~(~a) ==> can be considerd as a
+
+// while (num <= ~(~a))  // num <= a
+// // 010 is octal value decimal value is 8 ( 0 <= 8 )
+// {
+//     printf("%d ", num++);// post increment first value is printed and the incremented
+//     // prints 0 in first iteration and incremented to 1
+//     if (num % 2) // if( 1 % 2 )=> if ( 1 )=> if(True)
+//     num++; //num is 1 post incremented to 2
+// }
+
+// // now num is 2
+// while (num <= ~(~a))  // 2 <= 8
+// // 010 is octal value decimal value is 8 ( 2 <= 8 )
+// {
+//     printf("%d ", num++);// post increment, first value is printed and the incremented
+//     // prints 2 and then incremented to 3 ( now num is 3)
+//     if (num % 2) // if( 3 % 2 )=> if ( 1 )=> if(True)
+//     num++; //num is 3 post incremented to 4
+// }
+
+// // now num is 4
+// while (num <= ~(~a))  // 4 <= 8
+// // 010 is octal value decimal value is 8 ( 4 <= 8 )
+// {
+//     printf("%d ", num++);// post increment, first value is printed and the incremented
+//     // prints 4 and then incremented to 5 ( now num is 5)
+//     if (num % 2) // if( 5 % 2 )=> if ( 1 )=> if(True)
+//     num++; //num is 5 post incremented to 6
+// }
+// // now num is 6
+// while (num <= ~(~a))  // 6 <= 8
+// // 010 is octal value decimal value is 8 ( 6 <= 8 )
+// {
+//     printf("%d ", num++);// post increment first value is printed and the incremented
+//     // prints 6 and then incremented to 7 ( now num is 7)
+//     if (num % 2) // if( 7 % 2 )=> if ( 1 )=> if(True)
+//     num++; //num is 7 post incremented to 8
+// }
+
+// // now num is 8
+// while (num <= ~(~a))  // 8 <= 8
+// // 010 is octal value decimal value is 8 ( 8 <= 8 )
+// {
+//     printf("%d ", num++);// post increment first value is printed and the incremented
+//     // prints 8 and then incremented to 9 ( now num is 9)
+//     if (num % 2) // if( 9 % 2 )=> if ( 1 )=> if(True)
+//     num++; //num is 9 post incremented to 10
+// }
+// // now num is 10
+// while (num <= ~(~a))  // 10 <= 8 => false ( control comes out of while loop)
+// {
+//     printf("%d ", num++);
+//     if (num % 2)
+//     num++;
+// }
+// */
+// return 0;
+// }
+
+// #include <stdio.h>
+// int main()
+// {
+//     int var = 0, j;
+//     for (j = 0; j <= 5; j += 2)
+//         switch (j)
+//         {
+//         case 1:
+//             var++;
+//             break;
+//         case 2:
+//             var += 2;
+//         case 4:
+//             var %= 2;
+//             j = -1;
+//             continue;
+//         default:
+//             --var;
+//             continue;
+//         }
+//     printf("%d", var);
+//    /*
+//         int var = 0, j;
+//         for (j = 0; j <= 5; j += 2)
+//             switch (j) //switch(0)
+//             {
+//             // no case match default case gets handled
+//             case 1:
+//                 var++;
+//                 break;
+//             case 2:
+//                 var += 2;
+//             case 4:
+//                 var %= 2;
+//                 j = -1;
+//                 continue;
+//             default:
+//                 --var; // --var makes value 0 to -1
+//                 continue; // continue will take control to the loop
+//             }
+//         printf("%d", var);
+
+//         // var is -1
+//         // in next iteration value of j is 2
+//         for (j = 0; j <= 5; j += 2)
+//             switch (j) //switch(2)
+//             {
+//             // case 2 will get handled
+//             case 1:
+//                 var++;
+//                 break;
+//             case 2:
+//                 var += 2; // var = var + 2 => -1 + 2 => 1
+//             // no break statment so next case is also handled
+//             case 4:
+//                 var %= 2; // var = var % 2 => 1 % 2 => 1
+//                 j = -1; // j=-1 ( value of j is updated to -1)
+//                 continue; // continue will take the control to the loop
+//             default:
+//                 --var;
+//                 continue;
+//             }
+//         printf("%d", var);
+
+//         // var is 1
+//         // now j is -1
+//         // j = j+2 => -1 + 2 => 1
+//         for (j = 0; j <= 5; j += 2)
+//             switch (j) //switch(1)
+//             {
+//             // case 1 will get handled
+//             case 1:
+//                 var++; // var is incremented from 1 to 2
+//                 break;
+//             case 2:
+//                 var += 2;
+//             case 4:
+//                 var %= 2;
+//                 j = -1;
+//                 continue;
+//             default:
+//                 --var;
+//                 continue;
+//             }
+//         printf("%d", var);
+
+//         // var is 2
+//         // value of j is 1
+//         // j+=2 => 1 + 2 => 3
+//         for (j = 0; j <= 5; j += 2)
+//             switch (j) //switch(3)
+//             {
+//             // no case 3 so default case will be handled
+//             case 1:
+//                 var++;
+//                 break;
+//             case 2:
+//                 var += 2;
+//             case 4:
+//                 var %= 2;
+//                 j = -1;
+//                 continue;
+//             default:
+//                 --var; //--var => --2 => 1
+//                 continue; // continue will take the control to the loop
+//             }
+//         printf("%d", var);
+
+//         // var is 1
+//         // value of j is 3
+//         // j+=2 => 3 + 2 => 5
+//         for (j = 0; j <= 5; j += 2)
+//             switch (j) //switch(5)
+//             {
+//             // no case 5 so default case will be handled
+//             case 1:
+//                 var++;
+//                 break;
+//             case 2:
+//                 var += 2;
+//             case 4:
+//                 var %= 2;
+//                 j = -1;
+//                 continue;
+//             default:
+//                 --var; //--var => --1 => 0
+//                 continue; // continue will take the control to the loop
+//             }
+//         printf("%d", var);
+
+//         // var is 0
+//         // value of j is 5
+//         // j+=2 => 5 + 2 => 7
+//         for (j = 0; j <= 5; j += 2) // 7<=5 => false ( control comes out the loop)
+//             switch (j) //switch(5)
+//             {
+//             case 1:
+//                 var++;
+//                 break;
+//             case 2:
+//                 var += 2;
+//             case 4:
+//                 var %= 2;
+//                 j = -1;
+//                 continue;
+//             default:
+//                 --var;
+//                 continue;
+//             }
+//         printf("%d", var); // prints the value 0
+
+//    */
+//     return 0;
+// }
+
+// #include <stdio.h>
+// int main(void)
+// {
+// unsigned int var = 1;
+// while(--var > -2)
+// printf("PreCAT");
+// /*
+//     we are comparing signed with unsigned
+//     var is unsigned and -2 is signed
+//     when 2 operands are of diff type lower type is promoted to higher type
+//     Here signed is promoted to unsigned
+//     so -2 is converted to unsigned int
+//     range of unsigned int is => 4294967295
+//     4294967295 - 2 => 4294967293
+//     4294967293 this value is used for comparison
+//     while(--var > -2) =>
+//     while(0 > 4294967293 ) => false
+//     so control dont goes inside the loop
+//     so no o/p
+// */
+// return 0;
+// }
+
+#include <stdio.h>
+int main(void)
+{
+    int i = 1, j;
+    for (;;) // loop always true 
+    {
+        if (i)
+            j = --i;
+        if (j < 10)
+            printf("\n Sunbeam", j++);
+        else
+            break;
+        continue;
+    }
+    /*
+        int i = 1, j;
+        for (;;) // loop always true 
+        {
+            if (i) // if(1) => if(True)
+                j = --i; // i is 1 so pre-decrem 1 to 0 , value of j is 0
+            if (j < 10) // if(0<10)=> if(T)
+                printf("\n Sunbeam", j++);//Sunbeam printed j++ => post incr j to 1  
+            else
+                break; //skipped 
+            continue;// continue will take the control to the loop 
+        }
+
+        //value of j is 1 
+        for (;;) // loop always true 
+        {
+            if (i) // if(0) => if(False)
+                j = --i; // skipped 
+            if (j < 10) // if(1<10)=> if(T)
+                printf("\n Sunbeam", j++);//Sunbeam printed j++ => post incr j to 2  
+            else
+                break; //skipped 
+            continue;// continue will take the control to the loop 
+        }
+
+        //value of j is 2 
+        for (;;) // loop always true 
+        {
+            if (i) // if(0) => if(False)
+                j = --i; // skipped 
+            if (j < 10) // if(2<10)=> if(T)
+                printf("\n Sunbeam", j++);//Sunbeam printed j++ => post incr 2 to 3  
+            else
+                break; //skipped 
+            continue;// continue will take the control to the loop 
+        }
+        //value of j is 3 
+        for (;;) // loop always true 
+        {
+            if (i) // if(0) => if(False)
+                j = --i; // skipped 
+            if (j < 10) // if(3<10)=> if(T)
+                printf("\n Sunbeam", j++);//Sunbeam printed j++ => post incr 3 to 4  
+            else
+                break; //skipped 
+            continue;// continue will take the control to the loop 
+        }
+        
+        //value of j is 4 
+        for (;;) // loop always true 
+        {
+            if (i) // if(0) => if(False)
+                j = --i; // skipped 
+            if (j < 10) // if(4<10)=> if(T)
+                printf("\n Sunbeam", j++);//Sunbeam printed j++ => post incr j to 5  
+            else
+                break; //skipped 
+            continue;// continue will take the control to the loop 
+        }
+
+        //value of j is 5 
+        for (;;) // loop always true 
+        {
+            if (i) // if(0) => if(False)
+                j = --i; // skipped 
+            if (j < 10) // if(5<10)=> if(T)
+                printf("\n Sunbeam", j++);//Sunbeam printed j++ => post incr j to 6  
+            else
+                break; //skipped 
+            continue;// continue will take the control to the loop 
+        }
+        //value of j is 6 
+        for (;;) // loop always true 
+        {
+            if (i) // if(0) => if(False)
+                j = --i; // skipped 
+            if (j < 10) // if(6<10)=> if(T)
+                printf("\n Sunbeam", j++);//Sunbeam printed j++ => post incr j to 7  
+            else
+                break; //skipped 
+            continue;// continue will take the control to the loop 
+        }
+
+        //value of j is 7 
+        for (;;) // loop always true 
+        {
+            if (i) // if(0) => if(False)
+                j = --i; // skipped 
+            if (j < 10) // if(7<10)=> if(T)
+                printf("\n Sunbeam", j++);//Sunbeam printed j++ => post incr j to 8 
+            else
+                break; //skipped 
+            continue;// continue will take the control to the loop 
+        }
+
+        //value of j is 8 
+        for (;;) // loop always true 
+        {
+            if (i) // if(0) => if(False)
+                j = --i; // skipped 
+            if (j < 10) // if(8<10)=> if(T)
+                printf("\n Sunbeam", j++);//Sunbeam printed j++ => post incr j to 9 
+            else
+                break; //skipped 
+            continue;// continue will take the control to the loop 
+        }
+
+        //value of j is 9 
+        for (;;) // loop always true 
+        {
+            if (i) // if(0) => if(False)
+                j = --i; // skipped 
+            if (j < 10) // if(9<10)=> if(T)
+                printf("\n Sunbeam", j++);//Sunbeam printed j++ => post incr j to 10 
+            else
+                break; //skipped 
+            continue;// continue will take the control to the loop 
+        }
+
+          //value of j is 10 
+        for (;;) // loop always true 
+        {
+            if (i) // if(0) => if(False)
+                j = --i; // skipped 
+            if (j < 10) // if(10<10)=> if(F)
+                printf("\n Sunbeam", j++);//Skipped 
+            else // control comes to else part 
+                break; // break takes the control outside the loop 
+            continue;
+        }
+
+    
+    
+    
+    
+    */
+    return 0;
+}

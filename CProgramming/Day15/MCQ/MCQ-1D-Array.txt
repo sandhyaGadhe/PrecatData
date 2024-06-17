@@ -1,0 +1,65 @@
+#include<stdio.h>
+
+// arr 
+//  100 ,  1 ,  0 , 200 , 1
+//  [0]   [1]  [2]  [3]  [4]
+
+void function_Array(int arr[], int size)
+{
+int i=2,j,m;
+// i = 2; 
+i=arr[i++]++; // arr[2] is copied into i ( i.e 0)
+// i = 0; 
+// post-increment after arr[]++ will increment a[2] to 1   
+
+//printf("i = %d arr[2] = %d\n",i,arr[2]); // 0 1  
+
+// arr 
+//  100 ,  1 ,  1 , 200 , 1
+//  [0]   [1]  [2]  [3]  [4]
+
+
+// i is 0 now 
+j=++arr[++i]; // [++i] =>[++0] => i becomes 1 
+//++arr[1]  is copied into j ( arr[1] is 1  ) 
+// arr[1] is pre-incremented to 2 and copied into j 
+//printf("j=%d i=%d arr[1]=%d\n",j,i,arr[1]); // 2 , 1 , 2  
+
+
+//  100 ,  2 ,  1 , 200 , 1
+//  [0]   [1]  [2]  [3]  [4]
+
+// j =2 , i = 1 
+
+m=--arr[j--];// --arr[2--] => pre-decrement => arr[2] is 1 pre-decre to 0
+// 0 is copied into m 
+//[j--] j is post-decrmented to 1   
+
+//printf("j=%d i=%d arr[2]=%d m=%d\n",j,i,arr[2],m); // 1 , 1 , 0 , 0  
+
+//arr
+//  100 ,  2 ,  0 , 200 , 1
+//  [0]   [1]  [2]  [3]  [4]
+//  100   104  108  112  116 
+
+printf("%d,%d,%d,%d",i,j,m, *(arr+i+j+m));
+//                     1,1,0,0  
+
+// *(arr+i+j+m) => *(100 + 1 + 1 + 0)
+//              =>  *(100 + 2)
+//              =>  *(100 + 2 * 4)
+//              =>  *(100 + 8)
+//              =>  *(108)
+//              =>    0 
+
+
+
+return; 
+
+}
+int main( void )
+{
+int a[5]={100,1,0,200,1};
+function_Array(a, 5);
+return 0;
+}

@@ -1,0 +1,234 @@
+// #include <stdio.h>
+// int num;
+// int cnt;
+// int function(int n)
+// {
+//     int num = 100 / ++cnt;
+//     return num;
+// }
+// int main(void)
+// {
+//     {
+//         int num = 100;
+//         {
+//             int num = 100;
+//             printf("%d %d\t", num, function(200));
+//             //                100    100
+//             // in first call 200/++cnt => 100/1 => 100 is returned
+//         }
+//         // cnt is 1 ( global variable) ( in first call )
+//         printf("%d %d\t", num, function(200));
+//         //                100    50
+//         //   in second call 200 / ++cnt => 100 / 2 => 50 is returned
+//         // cnt is 2 ( global variable) ( in Second call )
+//     }
+//     cnt++; //cnt is incremented to 3
+//     printf("%d %d\t", num, function(200));
+//     //                0       25
+//     // here num is printed as 0 because there is no num in current main scope so global variable is referred
+//     // function(200) is passed => 100 /++cnt => 100 / 4 => 25
+//     // cnt is incremented 4 times ,global variable is destroyed after completion of main
+//     return 0;
+// }
+
+// #include <stdio.h>
+// int testDemo(int, int, int);
+// int main(void)
+// {
+//     int you = 64, me = 32, choice = 1;
+//     if (choice == 1)
+//     {
+//         int we = testDemo(you, me, 1);
+//         printf("%d %d %d\t", me, you, we);
+//     }
+//     int we = testDemo(me, you, 2);
+//     printf("[%d %d %d]\n", me, you, we);
+//     return 0;
+// }
+// int testDemo(int me, int you, int choice)
+// {
+//     if (choice == 1)
+//     {
+//         me = me + you;
+//         return me - you;
+//     }
+//     else if (choice == 2)
+//     {
+//         you = you - me;
+//         return me + you;
+//     }
+//     return 1;
+// }
+// /*
+
+//     int you = 64, me = 32, choice = 1;
+//     if (choice == 1) // True
+//     {
+//         // first call
+//         int we = testDemo(you, me, 1); // 64,32,1 is passed to testDemo
+//         printf("%d %d %d\t", me, you, we);//32 , 64 , 64 ( 64 is returned from the first call )
+//     }
+//     int we = testDemo(me, you, 2);
+//     printf("[%d %d %d]\n", me, you, we);
+//     return 0;
+// }
+// // in first call
+// // me = 64 (you is copied into me), you = 32 ( me is copied into you ), 1 is copied into choice
+// int testDemo(int me, int you, int choice)
+// {
+//     if (choice == 1) // True
+//     {
+//         me = me + you; // me = me + you => 64 + 32 => 96 (me is updated to 96)
+//         return me - you; // return 96 - 32 => 64 is returned to calling function
+//     }
+//     else if (choice == 2) // skipped
+//     {
+//         you = you - me;
+//         return me + you;
+//     }
+//     return 1;// skipped
+// }
+// ****************************************************
+//     int you = 64, me = 32, choice = 1;
+//     if (choice == 1) // True
+//     {
+//         int we = testDemo(you, me, 1);
+//         printf("%d %d %d\t", me, you, we);//32 , 64 , 64 ( 64 is returned from the first call )
+//     }
+//     //control comes here from called function
+//     // second call is made to testDemo
+//     int we = testDemo(me, you, 2); // 32 , 64 , 2 is passed to testDemo function
+//     printf("[%d %d %d]\n", me, you, we);
+//     //                     32 , 64, 64( 64 is returned from the calling function )
+//     return 0;
+//     }
+
+
+//     //me=32 , you = 64 , choice = 2 (actual arg copied into formal argument)
+//     int testDemo(int me, int you , int choice)
+//     {
+//     if( choice==1) // false
+//     {
+//         me = me + you;
+//         return me - you;
+//     }
+//     else if( choice==2) // True
+//     {
+//     you = you - me; // you = 64 - 32 => 32
+//     return me + you; // return me + you => 32 + 32 => 64 ( 64 is returned to calling function )
+//     }
+//     return 1;
+//     }
+
+// */
+
+// #include <stdio.h>
+// int value = 1000;
+// int function(void)
+// {
+//     auto int value = 100;
+//     value = value << 2;// multiply by 2 to the power 2 => 100 * 4 => 400
+//     printf("%d ", value); // 400 is printed
+//     //value is updated to 400
+//     {
+
+//         value = value << 2;// 400<<2 => multiply by 2 to the power 2 => 400 * 4 => 1600
+//         printf("%d ", value);//1600 is printed here
+//         //value is updated to 1600
+//         {
+//             value = value >> 2; //1600>>2 => divide by 2 to the power 2 => 1600/4=>400
+//             printf("%d ", value); // 400 is printed here
+//         }
+//         // value is updated to 400
+//         value = value >> 2;//400>>2 =>  divide by 2 to the power 2 => 400 / 4 => 100
+//         printf("%d ", value);//100 is printed here
+//     }
+//     //value is updated to 100
+//     value = value >> 2;//100>>2 => divide by 2 to the power 2 => 100/4=>25
+//     printf("%d ", value);// 25 is printed here
+//     return 0;
+// }
+// int main(void)
+// {
+//     function();
+//     return 0;
+// }
+
+// #include <stdio.h>
+// int no1 = 17, no2 = 71;
+// void swapping(void)
+// {
+//     int temp = no2;
+//     no2 = no1;
+//     no1 = temp;
+//     printf("%d %d\t", no1, no2);
+// }
+// void swap(int n1, int n2)
+// {
+//     n1 = n1 + n2;
+//     n2 = n1 - n2;
+//     n1 = n1 - n2;
+//     printf("%d %d\t", n1, n2);
+// }
+// int main(void)
+// {
+//     int no1 = 17, no2 = 71;
+//     swap(no2, no1);
+//     swapping();
+//     return 0;
+// }
+// /*
+
+// #include <stdio.h>
+// int no1 = 17, no2 = 71;
+// void swapping(void)
+// {
+//     int temp = no2;
+//     no2 = no1;
+//     no1 = temp;
+//     printf("%d %d\t", no1, no2);
+// }
+// void swap(int n1, int n2)//n1=71 , n2 = 17 
+// {
+//     n1 = n1 + n2; // n1 = 17 + 71 => 88 (n1 is updated to 88)
+//     n2 = n1 - n2; // n2 = 88 - 17 => 71 ( n2 is updated to 71)
+//     n1 = n1 - n2; // n1 = 88 - 71 => 17 ( n1 is updated to 17 )
+//     printf("%d %d\t", n1, n2); // 17 , 71 
+// }
+// int main(void)
+// {
+//     int no1 = 17, no2 = 71;//local variables 
+//     swap(no2, no1); // first call is made to function swap(71,17)
+//     swapping();
+//     return 0;
+// }
+
+
+// #include <stdio.h>
+// int no1 = 17, no2 = 71;
+// void swapping(void)
+// {
+//     // here no local variables so global variables are reffered here 
+//     int temp = no2;// temp = 71  
+//     no2 = no1; // no2 = 17 
+//     no1 = temp; //no1 = 71 
+//     printf("%d %d\t", no1, no2);
+//     //                 71   17 is printed here  
+// }
+// void swap(int n1, int n2)
+// {
+//     n1 = n1 + n2; 
+//     n2 = n1 - n2; 
+//     n1 = n1 - n2; 
+//     printf("%d %d\t", n1, n2); 
+// }
+// int main(void)
+// {
+//     int no1 = 17, no2 = 71;//local variables 
+//     swap(no2, no1); 
+//     swapping();// second call is made to swapping function 
+//     return 0;
+// }
+
+// */
+

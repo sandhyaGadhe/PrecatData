@@ -1,0 +1,43 @@
+//#include <stdio.h>
+// #define MAX 6
+// #define CAPACITY MAX * 10
+// struct course
+// {
+//     int capacity;
+//     char coursename[15];
+// };
+// int main(void)
+// {
+//     struct course arr[] = {{CAPACITY * 4, "DAC Pune"},
+//                            {CAPACITY * 2, "KDAC Karad"},
+//                            {CAPACITY, "DBDA"},
+//                            {CAPACITY, "DESD"},
+//                            {CAPACITY * 2, "DMC"},
+//                            {CAPACITY, "DITISS"}};
+//     printf("%d, %d , %d", arr[-1 + MAX].capacity,
+//            ((MAX - 1 + arr))->capacity,
+//            (*(arr - 1 + MAX)).capacity);
+//     return 0;
+// }
+// struct course
+// {
+//     int capacity;
+//     char coursename[15];
+// };
+// int main(void)
+// {
+//     struct course arr[] = {{6 * 10 * 4, "DAC Pune"}, //240 , "DAC Pune" 
+//                            {6 * 10 * 2, "KDAC Karad"},//120 , "KDAC Karad" 
+//                            {6 * 10, "DBDA"},//60 , "DBDA"
+//                            {6 * 10, "DESD"},//60 , "DESD"
+//                            {6 * 10 * 2, "DMC"},//120 , "DMC"
+//                            {6 * 10, "DITISS"}};//60 , "DITISS"
+//     // printf("%d, %d , %d", arr[-1 + 6].capacity,
+//     //        ((6 - 1 + arr))->capacity,
+//     //        (*(arr - 1 + 6)).capacity);
+
+//     printf("%d, %d , %d", arr[5].capacity,
+//            ((5 + arr))->capacity,
+//            (*(arr + 5 )).capacity);
+//     return 0;
+// }
